@@ -1,5 +1,7 @@
 # Pomelo.Data.MySql
 
+[![Build status](https://ci.appveyor.com/api/projects/status/r4cpdgpfwn2bh56n/branch/master?svg=true)](https://ci.appveyor.com/project/Kagamine/pomelo-data-mysql/branch/master)  [![Build status](https://travis-ci.org/PomeloFoundation/Pomelo.Data.MySql.svg)](https://travis-ci.org/PomeloFoundation/Pomelo.Data.MySql)
+
 Contains MySQL implementations of the System.Data.Common(Both .NET Core and .NET Framework) interfaces.
 
 You can access this library by using MyGet Feed: `https://www.myget.org/F/pomelo/api/v2/`
