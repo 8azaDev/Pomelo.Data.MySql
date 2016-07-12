@@ -22,5 +22,7 @@ branches:
     - release
     - dev
     - /^(.*\/)?ci-.*$/
+before_script:
+  - chmod ugo+x build.sh
 script:
   - ./build.sh --quiet verify
