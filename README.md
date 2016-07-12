@@ -1,8 +1,10 @@
-# MySQL for .NET Core
+# Pomelo.Data.MySql
+
+Contains MySQL implementations of the System.Data.Common(Both .NET Core and .NET Framework) interfaces.
 
 You can access this library by using MyGet Feed: `https://www.myget.org/F/pomelo/api/v2/`
 
-## MySQL for ADO.NET Core
+## Getting Started
 
 After adding myget feed, you can put `Pomelo.Data.MySql` into your `project.json`, and the version should be `1.0.0`.
 
