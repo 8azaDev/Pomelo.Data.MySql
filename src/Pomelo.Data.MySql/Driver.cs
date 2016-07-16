@@ -541,7 +541,11 @@ namespace Pomelo.Data.MySql
             finally
             {
                 if (reader != null)
+                {
+                    foreach (var x in reader)
+                        x.Dispose();
                     reader.Clear();
+                }
                 isOpen = false;
                 disposeComplete = true;
                 disposeInProgress = false;
