@@ -1,6 +1,7 @@
 # Pomelo.Data.MySql
 
-[![Build status](https://ci.appveyor.com/api/projects/status/r4cpdgpfwn2bh56n/branch/master?svg=true)](https://ci.appveyor.com/project/Kagamine/pomelo-data-mysql/branch/master)  [![Build status](https://travis-ci.org/PomeloFoundation/Pomelo.Data.MySql.svg)](https://travis-ci.org/PomeloFoundation/Pomelo.Data.MySql)
+[![Travis build status](https://img.shields.io/travis/PomeloFoundation/Pomelo.Data.MySql.svg?label=travis-ci&branch=master&style=flat-square)](https://travis-ci.org/PomeloFoundation/Pomelo.Data.MySql)
+[![AppVeyor build status](https://img.shields.io/appveyor/ci/Kagamine/Pomelo-Data-MySql/master.svg?label=appveyor&style=flat-square)](https://ci.appveyor.com/project/Kagamine/pomelo-data-mysql/branch/master)
 
 Contains MySQL implementations of the System.Data.Common(Both .NET Core and .NET Framework) interfaces.
 
