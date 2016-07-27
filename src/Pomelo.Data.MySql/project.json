@@ -8,6 +8,7 @@
   "packOptions": {
     "authors": [ "Amamiya Yuuko" ],
     "description": "MySQL ADO.NET for .NET Core",
+    "projectUrl": "https://github.com/PomeloFoundation/Pomelo.Data.MySql",
     "iconUrl": "http://www.1234.sh/assets/Shared/pomelofoundation.png",
     "licenseUrl": "https://github.com/PomeloFoundation/Pomelo.Data.MySql/blob/master/LICENSE",
     "repository": {
