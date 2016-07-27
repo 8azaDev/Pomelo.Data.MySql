@@ -5,6 +5,17 @@
     "allowUnsafe": true
   },
 
+  "packOptions": {
+    "authors": [ "Amamiya Yuuko" ],
+    "description": "MySQL ADO.NET for .NET Core",
+    "iconUrl": "http://www.1234.sh/assets/Shared/pomelofoundation.png",
+    "licenseUrl": "https://github.com/PomeloFoundation/Pomelo.Data.MySql/blob/master/LICENSE",
+    "repository": {
+      "type": "git",
+      "url": "git://github.com/pomelofoundation/pomelo.data.mysql"
+    }
+  },
+
   "namedResource": {
     "Pomelo.Data.MySql.resources": "Properties/Resources.resx"
   },
