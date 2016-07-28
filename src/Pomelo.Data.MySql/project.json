@@ -2,7 +2,12 @@
   "version": "1.0.0-*",
 
   "buildOptions": {
-    "allowUnsafe": true
+    "allowUnsafe": true,
+    "embed": {
+      "mappings": {
+        "Pomelo.Data.MySql.resources": "Properties/Resources.resx"
+      }
+    }
   },
 
   "packOptions": {
@@ -15,10 +20,6 @@
       "type": "git",
       "url": "git://github.com/pomelofoundation/pomelo.data.mysql"
     }
-  },
-
-  "namedResource": {
-    "Pomelo.Data.MySql.resources": "Properties/Resources.resx"
   },
 
   "dependencies": {
