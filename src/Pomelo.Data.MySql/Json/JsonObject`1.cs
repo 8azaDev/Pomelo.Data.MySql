@@ -136,5 +136,10 @@ namespace System
         {
             return !a.Equals(b);
         }
+
+        public override int GetHashCode()
+        {
+            return base.GetHashCode();
+        }
     }
 }
