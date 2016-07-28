@@ -58,7 +58,7 @@ namespace Pomelo.Data.MySql
             if (encoding == null)
                 throw new MySqlException(Resources.DefaultEncodingNotFound);
             connectionString = settings;
-            serverCharSet = "latin1";
+            serverCharSet = "utf8";
             serverCharSetIndex = -1;
             maxPacketSize = 1024;
             handler = new NativeDriver(this);
