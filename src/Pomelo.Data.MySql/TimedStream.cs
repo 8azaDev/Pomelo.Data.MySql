@@ -239,7 +239,7 @@ namespace Pomelo.Data.MySql
       set { baseStream.WriteTimeout = value; }
     }
 
-#if NETSTANDARD1_6
+#if NETSTANDARD1_3
     public void Close()
 #else
     public override void Close()
@@ -248,10 +248,10 @@ namespace Pomelo.Data.MySql
       if (isClosed)
         return;
       isClosed = true;
-#if !NETSTANDARD1_6
+#if !NETSTANDARD1_3
             baseStream.Close();
 #endif
-#if NETSTANDARD1_6
+#if NETSTANDARD1_3
             baseStream.Dispose();
 #endif
     }

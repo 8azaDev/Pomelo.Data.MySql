@@ -17,7 +17,7 @@ namespace Pomelo.Data.MySql.Authentication
       {
         plugins["mysql_native_password"] = new PluginInfo("Pomelo.Data.MySql.Authentication.MySqlNativePasswordPlugin");
         plugins["sha256_password"] = new PluginInfo("Pomelo.Data.MySql.Authentication.Sha256AuthenticationPlugin");
-#if !NETSTANDARD1_6
+#if !NETSTANDARD1_3
         plugins["authentication_windows_client"] = new PluginInfo("Pomelo.Data.MySql.Authentication.MySqlWindowsAuthenticationPlugin");
         if (MySqlConfiguration.Settings != null && MySqlConfiguration.Settings.AuthenticationPlugins != null)
         {

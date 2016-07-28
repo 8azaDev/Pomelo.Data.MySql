@@ -28,7 +28,7 @@ namespace Pomelo.Data.MySql
         private ProcedureCache procedureCache;
         private bool isInUse;
         private PerformanceMonitor perfMonitor;
-#if !NETSTANDARD1_6
+#if !NETSTANDARD1_3
         private ExceptionInterceptor exceptionInterceptor;
         internal CommandInterceptor commandInterceptor;
 #endif
@@ -111,7 +111,7 @@ namespace Pomelo.Data.MySql
         {
             get
             {
-#if !NETSTANDARD1_6
+#if !NETSTANDARD1_3
                 return (State == ConnectionState.Closed) &&
                   driver != null &&
                   driver.CurrentTransaction != null;
@@ -365,7 +365,7 @@ namespace Pomelo.Data.MySql
             // in parallel
             lock (driver)
             {
-#if !NETSTANDARD1_6
+#if !NETSTANDARD1_3
                 if (Transaction.Current != null &&
                   Transaction.Current.TransactionInformation.Status == TransactionStatus.Aborted)
                 {
@@ -412,7 +412,7 @@ namespace Pomelo.Data.MySql
             if (State == ConnectionState.Open)
                 Throw(new InvalidOperationException(Resources.ConnectionAlreadyOpen));
 
-#if !NETSTANDARD1_6
+#if !NETSTANDARD1_3
             // start up our interceptors
             exceptionInterceptor = new ExceptionInterceptor(this);
             commandInterceptor = new CommandInterceptor(this);
@@ -422,7 +422,7 @@ namespace Pomelo.Data.MySql
 
             AssertPermissions();
 
-#if !NETSTANDARD1_6
+#if !NETSTANDARD1_3
             // if we are auto enlisting in a current transaction, then we will be
             // treating the connection as pooled
             if (Settings.AutoEnlist && Transaction.Current != null)
@@ -451,7 +451,7 @@ namespace Pomelo.Data.MySql
             currentSettings = driver.Settings;
         }
 #endif
-#if !NETSTANDARD1_6
+#if !NETSTANDARD1_3
                 if (Settings.Pooling)
                 {
                     MySqlPool pool = MySqlPoolManager.GetPool(currentSettings);
@@ -493,7 +493,7 @@ namespace Pomelo.Data.MySql
 
             // if we are opening up inside a current transaction, then autoenlist
             // TODO: control this with a connection string option
-#if !NETSTANDARD1_6
+#if !NETSTANDARD1_3
             if (Transaction.Current != null && Settings.AutoEnlist)
                 EnlistTransaction(Transaction.Current);
 #endif
@@ -567,7 +567,7 @@ namespace Pomelo.Data.MySql
             if (State == ConnectionState.Closed) return;
 
             if (Reader != null)
-#if !NETSTANDARD1_6
+#if !NETSTANDARD1_3
                 foreach (var x in Reader)
                     x.Close();
 #else
@@ -579,11 +579,11 @@ namespace Pomelo.Data.MySql
             // will be null on the second time through
             if (driver != null)
             {
-#if !NETSTANDARD1_6
+#if !NETSTANDARD1_3
                 if (driver.CurrentTransaction == null)
 #endif
                 CloseFully();
-#if !NETSTANDARD1_6
+#if !NETSTANDARD1_3
                 else
                     driver.IsInActiveUse = false;
 #endif
@@ -634,7 +634,7 @@ namespace Pomelo.Data.MySql
                 driver.ResetTimeout(5000);
                 if (Reader != null)
                 {
-#if NETSTANDARD1_6
+#if NETSTANDARD1_3
                     foreach(var x in Reader)
                         x.Dispose();
 #else
@@ -768,7 +768,7 @@ namespace Pomelo.Data.MySql
 
         internal void Throw(Exception ex)
         {
-#if !NETSTANDARD1_6
+#if !NETSTANDARD1_3
             if (exceptionInterceptor == null)
                 throw ex;
             exceptionInterceptor.Throw(ex);

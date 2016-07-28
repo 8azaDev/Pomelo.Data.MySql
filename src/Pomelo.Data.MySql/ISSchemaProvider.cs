@@ -512,7 +512,7 @@ namespace Pomelo.Data.MySql
           {
             reader.Read();
             string body = reader.GetString(2);
-#if NETSTANDARD1_6
+#if NETSTANDARD1_3
                         reader.Dispose();
 #else
                         reader.Close();
@@ -520,7 +520,7 @@ namespace Pomelo.Data.MySql
             ParseProcedureBody(parametersTable, body, routine, nameToRestrict);
           }
         }
-#if NETSTANDARD1_6
+#if NETSTANDARD1_3
                 catch (MySqlNullValueException snex)
 #else
           catch (System.Data.SqlTypes.SqlNullValueException snex)

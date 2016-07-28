@@ -892,7 +892,7 @@ namespace Pomelo.Data.MySql
                 if (ex.Number == 0)
                     throw new MySqlException(Resources.FatalErrorReadingResult, ex);
                 if ((commandBehavior & CommandBehavior.CloseConnection) != 0)
-#if !NETSTANDARD1_6
+#if !NETSTANDARD1_3
                     Close();
 #else
                     Dispose();
@@ -950,7 +950,7 @@ namespace Pomelo.Data.MySql
             IMySqlValue v = resultSet[index];
 
             if (checkNull && v.IsNull)
-#if NETSTANDARD1_6
+#if NETSTANDARD1_3
                 throw new MySqlNullValueException();
 #else
                 throw new System.Data.SqlTypes.SqlNullValueException();

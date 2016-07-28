@@ -3,7 +3,7 @@
 
 using System;
 using System.ComponentModel;
-#if !NETSTANDARD1_6
+#if !NETSTANDARD1_3
 using System.ComponentModel.Design.Serialization;
 #endif
 using System.Data;
@@ -14,7 +14,7 @@ using ParameterDirection = System.Data.ParameterDirection;
 
 namespace Pomelo.Data.MySql
 {
-#if !NETSTANDARD1_6
+#if !NETSTANDARD1_3
   [TypeConverter(typeof(MySqlParameterConverter))]
 #endif
 
@@ -297,7 +297,7 @@ namespace Pomelo.Data.MySql
     }
   }
 
-#if !NETSTANDARD1_6
+#if !NETSTANDARD1_3
   internal class MySqlParameterConverter : TypeConverter
   {
 

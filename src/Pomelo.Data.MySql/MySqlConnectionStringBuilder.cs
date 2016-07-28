@@ -1158,7 +1158,7 @@ namespace Pomelo.Data.MySql
       if (typeName.StartsWith("Int32") && Int32.TryParse(value.ToString(), out intVal32)) { value = intVal32; return; }
 
       object objValue;
-#if NETSTANDARD1_6
+#if NETSTANDARD1_3
             Type baseType = BaseType.GetTypeInfo().BaseType;
 #else
       Type baseType = BaseType.BaseType;

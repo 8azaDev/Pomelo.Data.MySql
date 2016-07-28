@@ -20,7 +20,7 @@ using Pomelo.Data.MySql.Replication;
 namespace Pomelo.Data.MySql
 {
     /// <include file='docs/mysqlcommand.xml' path='docs/ClassSummary/*'/> 
-#if NETSTANDARD1_6
+#if NETSTANDARD1_3
     public sealed partial class MySqlCommand
 #else
     public sealed partial class MySqlCommand : ICloneable, IDisposable
@@ -82,7 +82,7 @@ namespace Pomelo.Data.MySql
         }
 
         #region Destructor
-#if NETSTANDARD1_6
+#if NETSTANDARD1_3
         ~MySqlCommand()
         {
             this.Dispose();
@@ -207,7 +207,7 @@ namespace Pomelo.Data.MySql
         /// <include file='docs/mysqlcommand.xml' path='docs/Parameters/*'/>
         [Category("Data")]
         [Description("The parameters collection")]
-#if !NETSTANDARD1_6
+#if !NETSTANDARD1_3
     [DesignerSerializationVisibility(DesignerSerializationVisibility.Content)]
 #endif
         public new MySqlParameterCollection Parameters
@@ -311,7 +311,7 @@ namespace Pomelo.Data.MySql
         {
 
 
-#if !NETSTANDARD1_6
+#if !NETSTANDARD1_3
             int records = -1;
       // give our interceptors a shot at it first
       if ( connection != null && 
@@ -323,7 +323,7 @@ namespace Pomelo.Data.MySql
             // ok, none of our interceptors handled this so we default
             using (MySqlDataReader reader = ExecuteReader())
             {
-#if !NETSTANDARD1_6
+#if !NETSTANDARD1_3
                 reader.Close();
 #else
                 reader.Dispose();
@@ -359,7 +359,7 @@ namespace Pomelo.Data.MySql
         {
             if (connection != null && connection.Reader != null)
             {
-#if !NETSTANDARD1_6
+#if !NETSTANDARD1_3
                 foreach (var x in connection.Reader)
                     x.Close();
 #else
@@ -395,7 +395,7 @@ namespace Pomelo.Data.MySql
         /// <include file='docs/mysqlcommand.xml' path='docs/ExecuteReader1/*'/>
         public new MySqlDataReader ExecuteReader(CommandBehavior behavior)
         {
-#if !NETSTANDARD1_6
+#if !NETSTANDARD1_3
       // give our interceptors a shot at it first
       MySqlDataReader interceptedReader = null;
       if ( connection != null &&
@@ -432,7 +432,7 @@ namespace Pomelo.Data.MySql
                 //        Throw(new MySqlException(Resources.DataReaderOpen));
                 //    }
 
-#if !NETSTANDARD1_6
+#if !NETSTANDARD1_3
                 System.Transactions.Transaction curTrans = System.Transactions.Transaction.Current;
 
         if (curTrans != null)
@@ -593,7 +593,7 @@ namespace Pomelo.Data.MySql
             lastInsertedId = -1;
             object val = null;
 
-#if !NETSTANDARD1_6
+#if !NETSTANDARD1_3
       // give our interceptors a shot at it first
       if (connection != null &&
           connection.commandInterceptor.ExecuteScalar(CommandText, ref val))
@@ -894,7 +894,7 @@ namespace Pomelo.Data.MySql
         }
 
         partial void PartialClone(MySqlCommand clone);
-#if !(NETSTANDARD1_6)
+#if !(NETSTANDARD1_3)
         object ICloneable.Clone()
     {
       return this.Clone();
@@ -981,7 +981,7 @@ namespace Pomelo.Data.MySql
             throw ex;
         }
 
-#if NETSTANDARD1_6
+#if NETSTANDARD1_3
         public new void Dispose()
         {
             GC.SuppressFinalize(this);

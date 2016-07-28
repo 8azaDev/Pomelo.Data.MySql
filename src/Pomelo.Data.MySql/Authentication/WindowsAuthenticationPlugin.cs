@@ -14,7 +14,7 @@ namespace Pomelo.Data.MySql.Authentication
     /// <summary>
     /// 
     /// </summary>
-#if !NETSTANDARD1_6
+#if !NETSTANDARD1_3
     [SuppressUnmanagedCodeSecurityAttribute()]
 #endif
     internal class MySqlWindowsAuthenticationPlugin : MySqlAuthenticationPlugin
@@ -28,7 +28,7 @@ namespace Pomelo.Data.MySql.Authentication
         protected override void CheckConstraints()
         {
             string platform = String.Empty;
-#if !NETSTANDARD1_6
+#if !NETSTANDARD1_3
             int p = (int)Environment.OSVersion.Platform;
             if ((p == 4) || (p == 128))
                 platform = "Unix";
@@ -298,7 +298,7 @@ namespace Pomelo.Data.MySql.Authentication
             if (pBuffers != IntPtr.Zero)
             {
                 Debug.Assert(cBuffers == 1);
-#if NET452 || DNX452 || NETSTANDARD1_6
+#if NET452 || DNX452 || NETSTANDARD1_3
         SecBuffer ThisSecBuffer =
             (SecBuffer)Marshal.PtrToStructure<SecBuffer>(pBuffers);
 #else
@@ -319,7 +319,7 @@ namespace Pomelo.Data.MySql.Authentication
                 throw new InvalidOperationException("Object has already been disposed!!!");
             }
             Debug.Assert(cBuffers == 1);
-#if NET452 || DNX452 || NETSTANDARD1_6
+#if NET452 || DNX452 || NETSTANDARD1_3
       SecBuffer secBuffer = (SecBuffer)Marshal.PtrToStructure<SecBuffer>(pBuffers);
 #else
             SecBuffer secBuffer = (SecBuffer)Marshal.PtrToStructure(pBuffers, typeof(SecBuffer));

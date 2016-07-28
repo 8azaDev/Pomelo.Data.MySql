@@ -1,7 +1,7 @@
 // Copyright (c) Pomelo Foundation. All rights reserved.
 // Licensed under the MIT. See LICENSE in the project root for license information.
 
-#if !NETSTANDARD1_6
+#if !NETSTANDARD1_3
 using System;
 using System.Runtime.InteropServices;
 using System.Threading;

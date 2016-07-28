@@ -880,7 +880,7 @@ namespace Pomelo.Data.MySql
                 foreach (PropertyInfo property in attrs.GetType().GetProperties())
                 {
                     string name = property.Name;
-#if NETSTANDARD1_6
+#if NETSTANDARD1_3
                     object[] customAttrs = property.GetCustomAttributes(typeof(DisplayNameAttribute), false).ToArray();
 #else
           object[] customAttrs = property.GetCustomAttributes(typeof(DisplayNameAttribute), false).ToArray();

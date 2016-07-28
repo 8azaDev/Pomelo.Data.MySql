@@ -6,7 +6,7 @@
   </PropertyGroup>
   <Import Project="$(VSToolsPath)\DotNet\Microsoft.DotNet.Props" Condition="'$(VSToolsPath)' != ''" />
   <PropertyGroup Label="Globals">
-    <ProjectGuid>2fcb00e0-5ccb-40bd-a3d6-7b554e883aa3</ProjectGuid>
+    <ProjectGuid>05d1e5d1-1784-45a9-bc35-cc3e1da87165</ProjectGuid>
     <RootNamespace>Pomelo.Data.MySql</RootNamespace>
     <BaseIntermediateOutputPath Condition="'$(BaseIntermediateOutputPath)'=='' ">.\obj</BaseIntermediateOutputPath>
     <OutputPath Condition="'$(OutputPath)'=='' ">.\bin\</OutputPath>

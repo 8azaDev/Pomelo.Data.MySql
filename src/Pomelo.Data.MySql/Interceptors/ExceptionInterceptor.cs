@@ -78,7 +78,7 @@ namespace Pomelo.Data.MySql
 
     protected override string ResolveType(string nameOrType)
     {
-#if !NETSTANDARD1_6
+#if !NETSTANDARD1_3
 
             if (MySqlConfiguration.Settings != null && MySqlConfiguration.Settings.ExceptionInterceptors != null)
       {

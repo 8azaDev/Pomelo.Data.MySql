@@ -410,7 +410,7 @@ namespace Pomelo.Data.MySql
             get { return "MySql Connector/NET"; }
         }
 
-#if !NETSTANDARD1_6
+#if !NETSTANDARD1_3
         [DisplayName("_pid")]
         public string PID
         {

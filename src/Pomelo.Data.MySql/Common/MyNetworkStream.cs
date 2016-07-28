@@ -231,7 +231,7 @@ namespace Pomelo.Data.Common
             }
             catch (Exception ex)
             {
-#if !NETSTANDARD1_6
+#if !NETSTANDARD1_3
                 socket.Close();
 #else
                 socket.Dispose();

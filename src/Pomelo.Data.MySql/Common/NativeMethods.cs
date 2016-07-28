@@ -33,7 +33,7 @@ namespace Pomelo.Data.Common
         {
             public SecurityAttributes()
             {
-#if NET452 || DNX452 || NETSTANDARD1_6
+#if NET452 || DNX452 || NETSTANDARD1_3
         Length = Marshal.SizeOf<SecurityAttributes>();
 #else
                 Length = Marshal.SizeOf(typeof(SecurityAttributes));

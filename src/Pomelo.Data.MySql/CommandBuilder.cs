@@ -84,7 +84,7 @@ namespace Pomelo.Data.MySql
                       unsigned, real_as_float, command.Connection);
                     if (row["CHARACTER_MAXIMUM_LENGTH"] != null)
                         p.Size = (int)row["CHARACTER_MAXIMUM_LENGTH"];
-#if NET452 || DNX452 || NETSTANDARD1_6
+#if NET452 || DNX452 || NETSTANDARD1_3
           if (row["NUMERIC_PRECISION"] != null)
             p.Precision = Convert.ToByte(row["NUMERIC_PRECISION"]);
           if (row["NUMERIC_SCALE"] != null )

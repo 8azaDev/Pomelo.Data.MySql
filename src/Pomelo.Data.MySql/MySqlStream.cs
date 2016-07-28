@@ -65,7 +65,7 @@ namespace Pomelo.Data.MySql
 
         public void Close()
         {
-#if NETSTANDARD1_6
+#if NETSTANDARD1_3
             outStream.Dispose();
             inStream.Dispose();
 #else
@@ -190,7 +190,7 @@ namespace Pomelo.Data.MySql
                     // make roo for the next block
                     packet.Length += length;
 
-#if NETSTANDARD1_6
+#if NETSTANDARD1_3
                     byte[] tempBuffer = new byte[length];
                     ReadFully(inStream, tempBuffer, offset, length);
                     packet.Write(tempBuffer);
