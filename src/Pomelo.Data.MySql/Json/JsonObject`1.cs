@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json.Linq;
+﻿using System.Runtime.Remoting.Messaging;
+using Newtonsoft.Json.Linq;
 using static Newtonsoft.Json.JsonConvert;
 
 namespace System
@@ -31,7 +32,7 @@ namespace System
                 if (Object != null)
                     return SerializeObject(Object);
                 else
-                    return "";
+                    return string.Empty;
             }
             set
             {
@@ -56,6 +57,18 @@ namespace System
 
         public override bool Equals(object obj)
         {
+            if (obj == null && Json == Null)
+                return true;
+
+            if (obj.GetType().Name == "String")
+            {
+                var objString = obj as string;
+                if (objString == NaN && Json == NaN)
+                    return false;
+
+                return Equals(objString);
+            }
+
             try
             {
                 dynamic o = obj;
@@ -69,30 +82,56 @@ namespace System
 
         public bool Equals(JsonObject<T> other)
         {
+            if (other == null && Json == Null)
+                return true;
+
             return Equals(other.Json);
         }
 
         public bool Equals(JsonObject other)
         {
+            if (other == null && Json == Null)
+                return true;
+
             return Equals(other.Json);
         }
 
         public bool Equals(string other)
         {
+            if (other == NaN && Json == NaN)
+                return false;
+
+            if (string.IsNullOrWhiteSpace(other) ||
+               string.CompareOrdinal(other, Undefined) == 0 ||
+               string.CompareOrdinal(other, True) == 0 ||
+               string.CompareOrdinal(other, False) == 0 ||
+               string.CompareOrdinal(other, NegativeInfinity) == 0 ||
+               string.CompareOrdinal(other, PositiveInfinity) == 0)
+                return string.CompareOrdinal(other, Json) == 0;
+
             if (!IsSameType(Json, other))
                 return false;
-            if (IsObject(Json))
+
+            try
             {
-                var o1 = JObject.Parse(Json);
-                var o2 = JObject.Parse(other);
-                return JToken.DeepEquals(o1, o2);
+                if (IsObject(Json))
+                {
+                    var o1 = JObject.Parse(Json);
+                    var o2 = JObject.Parse(other);
+                    return JToken.DeepEquals(o1, o2);
+                }
+                else
+                {
+                    var a1 = JArray.Parse(Json);
+                    var a2 = JArray.Parse(other);
+                    return JToken.DeepEquals(a1, a2);
+                }
             }
-            else
+            catch
             {
-                var a1 = JArray.Parse(Json);
-                var a2 = JArray.Parse(other);
-                return JToken.DeepEquals(a1, a2);
+                return false;
             }
+
         }
 
         public static implicit operator JsonObject<T>(string json)
@@ -105,11 +144,6 @@ namespace System
             return new JsonObject<T>(obj);
         }
 
-        public static implicit operator JsonObject<T>(JsonObject obj)
-        {
-            return new JsonObject<T>(obj.Json);
-        }
-
         public static implicit operator JsonObject<T>(JsonObject<object> obj)
         {
             return new JsonObject<T>(obj.Json);
@@ -117,7 +151,28 @@ namespace System
 
         private static bool IsObject(string json)
         {
-            return json.TrimStart()[0] == '{';
+
+            if (string.IsNullOrWhiteSpace(json) ||
+                string.CompareOrdinal(json, NaN) == 0 ||
+                string.CompareOrdinal(json, Undefined) == 0 ||
+                string.CompareOrdinal(json, True) == 0 ||
+                string.CompareOrdinal(json, False) == 0 ||
+                string.CompareOrdinal(json, NegativeInfinity) == 0 ||
+                string.CompareOrdinal(json, PositiveInfinity) == 0)
+                return false;
+
+            if (string.CompareOrdinal(json, Null) == 0)
+                return true;
+
+            try
+            {
+                JObject.Parse(json);
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
         }
 
         private static bool IsSameType(string json1, string json2)
@@ -127,7 +182,7 @@ namespace System
             return false;
         }
 
-        public static bool operator== (JsonObject<T> a, JsonObject<T> b)
+        public static bool operator ==(JsonObject<T> a, JsonObject<T> b)
         {
             return a.Equals(b);
         }
