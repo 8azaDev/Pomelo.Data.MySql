@@ -1,5 +1,4 @@
-﻿using Newtonsoft.Json.Linq;
-using static Newtonsoft.Json.JsonConvert;
+﻿?using static Newtonsoft.Json.JsonConvert;
 
 namespace System
 {
@@ -7,44 +6,63 @@ namespace System
         where T : class
     {
         private string _originalValue { get; set; }
+        private T _originalObject { get; set; }
+        private Type _internalType { get; set; }
 
-        public JsonObject() { }
+        public JsonObject()
+        {
+            _internalType = typeof(T);
+        }
 
         public JsonObject(T instance)
+            : this()
         {
             Object = instance;
-            _originalValue = Json;
         }
 
         public JsonObject(string json)
+            : this()
         {
             Json = json;
-            _originalValue = Json;
+            Object = Object;
         }
 
-        public T Object { get; set; }
+        public T Object
+        {
+            get
+            {
+                return _originalObject;
+            }
+            set
+            {
+                _originalObject = value;
+
+                _originalValue = _originalObject != null
+                    ? SerializeObject(Object)
+                    : string.Empty;
+            }
+        }
 
         public string Json
         {
             get
             {
-                if (Object != null)
-                    return SerializeObject(Object);
-                else
-                    return string.Empty;
+                return _originalValue;
             }
             set
             {
                 try
                 {
-                    if (string.IsNullOrWhiteSpace(value))
-                        Object = default(T);
-                    else
-                        Object = DeserializeObject<T>(value);
+                    Object = string.IsNullOrWhiteSpace(value)
+                        ? default(T)
+                        : DeserializeObject<T>(value);
+
+                    _originalValue = value;
                 }
                 catch
                 {
                     Object = null;
+                    _originalValue = string.Empty;
                 }
             }
         }
@@ -100,36 +118,19 @@ namespace System
             if (other == NaN && Json == NaN)
                 return false;
 
-            if (string.IsNullOrWhiteSpace(other) ||
-               string.CompareOrdinal(other, Undefined) == 0 ||
-               string.CompareOrdinal(other, True) == 0 ||
-               string.CompareOrdinal(other, False) == 0 ||
-               string.CompareOrdinal(other, NegativeInfinity) == 0 ||
-               string.CompareOrdinal(other, PositiveInfinity) == 0)
+            if (string.IsNullOrWhiteSpace(other) || IsJsonConstant(other))
                 return string.CompareOrdinal(other, Json) == 0;
 
             if (!IsSameType(Json, other))
                 return false;
 
-            try
-            {
-                if (IsObject(Json))
-                {
-                    var o1 = JObject.Parse(Json);
-                    var o2 = JObject.Parse(other);
-                    return JToken.DeepEquals(o1, o2);
-                }
-                else
-                {
-                    var a1 = JArray.Parse(Json);
-                    var a2 = JArray.Parse(other);
-                    return JToken.DeepEquals(a1, a2);
-                }
-            }
-            catch
-            {
-                return false;
-            }
+            var tempJsonObject = new JsonObject(other);
+            return GetHashCode() == tempJsonObject.GetHashCode();
+        }
+
+        private Type GetInternalObjectType()
+        {
+            return _internalType;
 
         }
 
@@ -150,35 +151,52 @@ namespace System
 
         private static bool IsObject(string json)
         {
+            JsonObject jsonObject;
+            return IsObject(json, out jsonObject);
+        }
 
-            if (string.IsNullOrWhiteSpace(json) ||
-                string.CompareOrdinal(json, NaN) == 0 ||
-                string.CompareOrdinal(json, Undefined) == 0 ||
-                string.CompareOrdinal(json, True) == 0 ||
-                string.CompareOrdinal(json, False) == 0 ||
-                string.CompareOrdinal(json, NegativeInfinity) == 0 ||
-                string.CompareOrdinal(json, PositiveInfinity) == 0)
+        private static bool IsObject(string json, out JsonObject jsonObject)
+        {
+            jsonObject = null;
+
+            if (string.IsNullOrWhiteSpace(json) || IsJsonConstant(json))
                 return false;
 
             if (string.CompareOrdinal(json, Null) == 0)
                 return true;
 
-            try
-            {
-                JObject.Parse(json);
+            jsonObject = new JsonObject(json);
+
+            return jsonObject.Object != null;
+        }
+
+        private static bool IsJsonConstant(string json)
+        {
+            if (string.CompareOrdinal(json, NaN) == 0 ||
+               string.CompareOrdinal(json, Undefined) == 0 ||
+               string.CompareOrdinal(json, True) == 0 ||
+               string.CompareOrdinal(json, False) == 0 ||
+               string.CompareOrdinal(json, NegativeInfinity) == 0 ||
+               string.CompareOrdinal(json, PositiveInfinity) == 0)
                 return true;
-            }
-            catch
-            {
-                return false;
-            }
+
+            return false;
         }
 
         private static bool IsSameType(string json1, string json2)
         {
-            if (IsObject(json1) && IsObject(json2) || !IsObject(json1) && !IsObject(json2))
+            if (string.IsNullOrWhiteSpace(json1) && string.IsNullOrWhiteSpace(json2)
+                || json1 == Null && json2 == Null)
                 return true;
-            return false;
+
+            if (IsJsonConstant(json1) && IsJsonConstant(json2))
+                return json1 == json2;
+
+            JsonObject left, right;
+            if (!IsObject(json1, out left) || !IsObject(json2, out right))
+                return false;
+
+            return left.GetInternalObjectType().FullName == right.GetInternalObjectType().FullName;
         }
 
         public static bool operator ==(JsonObject<T> a, JsonObject<T> b)
@@ -193,7 +211,7 @@ namespace System
 
         public override int GetHashCode()
         {
-            return base.GetHashCode();
+            return Json.GetHashCode();
         }
     }
 }
