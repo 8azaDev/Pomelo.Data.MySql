@@ -1,4 +1,4 @@
-﻿?using static Newtonsoft.Json.JsonConvert;
+﻿using static Newtonsoft.Json.JsonConvert;
 
 namespace System
 {
