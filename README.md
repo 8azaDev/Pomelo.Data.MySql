@@ -1,9 +1,23 @@
 # Pomelo.Data.MySql
 
 [![Travis build status](https://img.shields.io/travis/PomeloFoundation/Pomelo.Data.MySql.svg?label=travis-ci&branch=master&style=flat-square)](https://travis-ci.org/PomeloFoundation/Pomelo.Data.MySql)
-[![AppVeyor build status](https://img.shields.io/appveyor/ci/Kagamine/Pomelo-Data-MySql/master.svg?label=appveyor&style=flat-square)](https://ci.appveyor.com/project/Kagamine/pomelo-data-mysql/branch/master) [![NuGet](https://img.shields.io/nuget/v/Pomelo.Data.MySql.svg?style=flat-square&label=nuget)](https://www.nuget.org/packages/Pomelo.Data.MySql/) [![Join the chat at https://gitter.im/PomeloFoundation/Home](https://badges.gitter.im/PomeloFoundation/Home.svg)](https://gitter.im/PomeloFoundation/Home?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+[![AppVeyor build status](https://img.shields.io/appveyor/ci/Kagamine/Pomelo-Data-MySql/master.svg?label=appveyor&style=flat-square)](https://ci.appveyor.com/project/Kagamine/pomelo-data-mysql/branch/master) [![NuGet](https://img.shields.io/nuget/v/Pomelo.Data.MySql.svg?style=flat-square&label=nuget)](https://www.nuget.org/packages/Pomelo.Data.MySql/) [![MyGet](https://img.shields.io/myget/pomelo/vpre/Pomelo.Data.MySql.svg?style=flat-square&label=myget)](https://www.myget.org/Package/Details/pomelo?packageType=nuget&packageId=Pomelo.Data.MySql) [![Join the chat at https://gitter.im/PomeloFoundation/Home](https://badges.gitter.im/PomeloFoundation/Home.svg)](https://gitter.im/PomeloFoundation/Home?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 Contains MySQL implementations of the System.Data.Common(Both .NET Core and .NET Framework) interfaces.
+
+## Nightly Builds
+
+To add a `NuGet.config` file in your solution root, then you can use the unstable packages:
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+  <packageSources>
+    <add key="Pomelo" value="https://www.myget.org/F/pomelo/api/v3/index.json" />
+    <add key="nuget.org" value="https://www.nuget.org/api/v2" />
+  </packageSources>
+</configuration>
+```
 
 ## Getting Started
 
