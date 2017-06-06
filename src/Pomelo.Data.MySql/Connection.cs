@@ -14,8 +14,6 @@ using Pomelo.Data.Common;
 #if SUPPORT_REPLICATION
 using Pomelo.Data.MySql.Replication;
 #endif
-using System.Threading.Tasks;
-using System.Threading;
 
 namespace Pomelo.Data.MySql
 {
@@ -69,7 +67,7 @@ namespace Pomelo.Data.MySql
         #endregion
 
         #region Interal Methods & Properties
-        
+
         internal PerformanceMonitor PerfMonitor
         {
             get { return perfMonitor; }
@@ -582,7 +580,7 @@ namespace Pomelo.Data.MySql
 #if !NETSTANDARD1_3
                 if (driver.CurrentTransaction == null)
 #endif
-                CloseFully();
+                    CloseFully();
 #if !NETSTANDARD1_3
                 else
                     driver.IsInActiveUse = false;
@@ -669,14 +667,15 @@ namespace Pomelo.Data.MySql
             {
                 c.isKillQueryConnection = true;
                 c.Open();
-                string commandText = "KILL QUERY " + ServerThread;
+                //string commandText = "KILL QUERY " + ServerThread;
+                string commandText = string.Format("KILL QUERY '{0}'", ServerThread);
                 MySqlCommand cmd = new MySqlCommand(commandText, c);
                 cmd.CommandTimeout = timeout;
                 cmd.ExecuteNonQuery();
             }
         }
 
-#region Routines for timeout support.
+        #region Routines for timeout support.
 
         // Problem description:
         // Sometimes, ExecuteReader is called recursively. This is the case if
@@ -738,7 +737,7 @@ namespace Pomelo.Data.MySql
                 driver.ResetTimeout(0);
             }
         }
-#endregion
+        #endregion
 
         public MySqlSchemaCollection GetSchemaCollection(string collectionName, string[] restrictionValues)
         {
@@ -750,7 +749,7 @@ namespace Pomelo.Data.MySql
             return c;
         }
 
-#region Pool Routines
+        #region Pool Routines
 
         /// <include file='docs/MySqlConnection.xml' path='docs/ClearPool/*'/>
         public static void ClearPool(MySqlConnection connection)
@@ -764,7 +763,7 @@ namespace Pomelo.Data.MySql
             MySqlPoolManager.ClearAllPools();
         }
 
-#endregion
+        #endregion
 
         internal void Throw(Exception ex)
         {
@@ -794,7 +793,7 @@ namespace Pomelo.Data.MySql
 #endif
 
 #if NET_40_OR_GREATER
-#region Async
+        #region Async
     /// <summary>
     /// Async version of BeginTransaction
     /// </summary>
@@ -1007,7 +1006,7 @@ namespace Pomelo.Data.MySql
       }
       return result.Task;
     }
-#endregion
+        #endregion
 #endif
     }
 
@@ -1046,7 +1045,7 @@ namespace Pomelo.Data.MySql
             }
         }
 
-#region IDisposable Members
+        #region IDisposable Members
         public void Dispose()
         {
             if (timeoutSet)
@@ -1056,6 +1055,6 @@ namespace Pomelo.Data.MySql
                 connection = null;
             }
         }
-#endregion
+        #endregion
     }
 }

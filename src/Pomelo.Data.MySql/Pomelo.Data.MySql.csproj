@@ -1,0 +1,72 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <VersionPrefix>1.0.1</VersionPrefix>
+    <TargetFrameworks>net451;netstandard1.3</TargetFrameworks>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <AssemblyName>Baza.Fork.Pomelo.Data.MySql</AssemblyName>
+    <PackageId>Baza.Fork.Pomelo.Data.MySql</PackageId>
+    <PackageTags>MySQL;.NET Core</PackageTags>
+    <PackageIconUrl>http://www.1234.sh/assets/Shared/pomelofoundation.png</PackageIconUrl>
+    <PackageProjectUrl>https://github.com/8azaDev/Pomelo.Data.MySql</PackageProjectUrl>
+    <PackageLicenseUrl>https://github.com/8azaDev/Pomelo.Data.MySql/blob/master/LICENSE</PackageLicenseUrl>
+    <RepositoryType>git</RepositoryType>
+    <RepositoryUrl>git://github.com/8azaDev/pomelo.data.mysql</RepositoryUrl>
+    <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
+    <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
+    <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
+    <GenerateAssemblyVersionAttribute>false</GenerateAssemblyVersionAttribute>
+    <GenerateAssemblyInformationalVersionAttribute>false</GenerateAssemblyInformationalVersionAttribute>
+    <GenerateNeutralResourcesLanguageAttribute>false</GenerateNeutralResourcesLanguageAttribute>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="9.0.1" />
+  </ItemGroup>
+
+  <ItemGroup Condition=" '$(TargetFramework)' == 'net451' ">
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Collections" />
+    <Reference Include="System.Diagnostics.Contracts" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System" />
+    <Reference Include="Microsoft.CSharp" />
+  </ItemGroup>
+
+  <ItemGroup Condition=" '$(TargetFramework)' == 'netstandard1.3' ">
+    <PackageReference Include="System.Collections.Concurrent" Version="4.0.12" />
+    <PackageReference Include="System.ComponentModel" Version="4.0.1" />
+    <PackageReference Include="System.ComponentModel.TypeConverter" Version="4.1.0" />
+    <PackageReference Include="System.Data.Common" Version="4.1.0" />
+    <PackageReference Include="System.Diagnostics.Contracts" Version="4.0.1" />
+    <PackageReference Include="System.Diagnostics.Debug" Version="4.0.11" />
+    <PackageReference Include="System.Diagnostics.Tools" Version="4.0.1" />
+    <PackageReference Include="System.Globalization" Version="4.0.11" />
+    <PackageReference Include="System.Globalization.Extensions" Version="4.0.1" />
+    <PackageReference Include="System.Linq" Version="4.1.0" />
+    <PackageReference Include="System.Net.NameResolution" Version="4.0.0" />
+    <PackageReference Include="System.Net.Primitives" Version="4.0.11" />
+    <PackageReference Include="System.Net.Security" Version="4.0.0" />
+    <PackageReference Include="System.Net.Sockets" Version="4.1.0" />
+    <PackageReference Include="System.Reflection.TypeExtensions" Version="4.1.0" />
+    <PackageReference Include="System.Resources.ResourceManager" Version="4.0.1" />
+    <PackageReference Include="System.Runtime.Extensions" Version="4.1.0" />
+    <PackageReference Include="System.Runtime.InteropServices" Version="4.1.0" />
+    <PackageReference Include="System.Runtime.Numerics" Version="4.0.1" />
+    <PackageReference Include="System.Security.Cryptography.Algorithms" Version="4.2.0" />
+    <PackageReference Include="System.Security.Cryptography.Primitives" Version="4.0.0" />
+    <PackageReference Include="System.Security.Cryptography.X509Certificates" Version="4.1.0" />
+    <PackageReference Include="System.Security.Principal" Version="4.0.1" />
+    <PackageReference Include="System.Text.Encoding.Extensions" Version="4.0.11" />
+    <PackageReference Include="System.Text.RegularExpressions" Version="4.1.0" />
+    <PackageReference Include="System.Threading.Timer" Version="4.0.1" />
+    <PackageReference Include="System.Console" Version="4.0.0" />
+    <PackageReference Include="System.IO.FileSystem" Version="4.0.1" />
+  </ItemGroup>
+
+</Project>
