@@ -6,20 +6,7 @@
         {
             using (var conn = GetMySqlConnection())
             {
-                conn.CancelQuery(1);
-                using (var command = conn.CreateCommand())
-                {
-                    command.CommandText = "select * from resume";
-                    command.CommandType = System.Data.CommandType.Text;
-                    command.CommandTimeout = 1;
-                    using (var reader = command.ExecuteReader())
-                    {
-                        while (reader.Read())
-                        {
-                            System.Console.WriteLine(reader.GetString(0));
-                        }
-                    }
-                }
+                conn.CancelQuery(5);
             }
         }
 
@@ -32,6 +19,7 @@
                 ConvertZeroDateTime = convertZeroDatetime
             };
             var conn = new MySqlConnection(csb.ConnectionString);
+            conn.UseDRDS = true;
             if (open) conn.Open();
             return conn;
         }

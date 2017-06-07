@@ -1,7 +1,7 @@
 // Copyright (c) Pomelo Foundation. All rights reserved.
 // Licensed under the MIT. See LICENSE in the project root for license information.
 
-#if !NETSTANDARD1_3
+#if !NETSTANDARD1_6
 
 using System;
 using System.IO;
@@ -12,7 +12,7 @@ using System.Threading;
 using System.Diagnostics;
 using System.Runtime.InteropServices;
 using System.ComponentModel;
-#if NET451
+#if NET46
 using System.Security;
 #endif
 
@@ -22,7 +22,7 @@ namespace Pomelo.Data.Common
     /// <summary>
     /// Summary description for API.
     /// </summary>
-#if NET451
+#if NET46
     [SuppressUnmanagedCodeSecurity()]
 #endif
   internal class NamedPipeStream : Stream

@@ -158,7 +158,7 @@ namespace Pomelo.Data.MySql
         /// <summary>
         /// Closes the MySqlDataReader object.
         /// </summary>
-#if NET451
+#if NET46
         public override void Close()
         
 #else
@@ -892,7 +892,7 @@ namespace Pomelo.Data.MySql
                 if (ex.Number == 0)
                     throw new MySqlException(Resources.FatalErrorReadingResult, ex);
                 if ((commandBehavior & CommandBehavior.CloseConnection) != 0)
-#if !NETSTANDARD1_3
+#if !NETSTANDARD1_6
                     Close();
 #else
                     Dispose();
@@ -950,7 +950,7 @@ namespace Pomelo.Data.MySql
             IMySqlValue v = resultSet[index];
 
             if (checkNull && v.IsNull)
-#if NETSTANDARD1_3
+#if NETSTANDARD1_6
                 throw new MySqlNullValueException();
 #else
                 throw new System.Data.SqlTypes.SqlNullValueException();

@@ -5,7 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-#if NET451
+#if NET46
 using System.Transactions;
 using IsolationLevel = System.Data.IsolationLevel;
 #endif
@@ -26,7 +26,7 @@ namespace Pomelo.Data.MySql
         private ProcedureCache procedureCache;
         private bool isInUse;
         private PerformanceMonitor perfMonitor;
-#if !NETSTANDARD1_3
+#if !NETSTANDARD1_6
         private ExceptionInterceptor exceptionInterceptor;
         internal CommandInterceptor commandInterceptor;
 #endif
@@ -109,7 +109,7 @@ namespace Pomelo.Data.MySql
         {
             get
             {
-#if !NETSTANDARD1_3
+#if !NETSTANDARD1_6
                 return (State == ConnectionState.Closed) &&
                   driver != null &&
                   driver.CurrentTransaction != null;
@@ -128,6 +128,12 @@ namespace Pomelo.Data.MySql
         #endregion
 
         #region Properties
+
+        /// <summary>
+        /// 指定是否使用DRDS便于兼容部分句法
+        /// </summary>
+        [Browsable(false)]
+        public bool UseDRDS { get; set; } = false;
 
         /// <summary>
         /// Returns the id of the server thread this connection is executing on
@@ -238,7 +244,7 @@ namespace Pomelo.Data.MySql
 
         #region Transactions
 
-#if NET451
+#if NET46
         /// <summary>
         /// Enlists in the specified transaction. 
         /// </summary>
@@ -363,7 +369,7 @@ namespace Pomelo.Data.MySql
             // in parallel
             lock (driver)
             {
-#if !NETSTANDARD1_3
+#if !NETSTANDARD1_6
                 if (Transaction.Current != null &&
                   Transaction.Current.TransactionInformation.Status == TransactionStatus.Aborted)
                 {
@@ -410,7 +416,7 @@ namespace Pomelo.Data.MySql
             if (State == ConnectionState.Open)
                 Throw(new InvalidOperationException(Resources.ConnectionAlreadyOpen));
 
-#if !NETSTANDARD1_3
+#if !NETSTANDARD1_6
             // start up our interceptors
             exceptionInterceptor = new ExceptionInterceptor(this);
             commandInterceptor = new CommandInterceptor(this);
@@ -420,7 +426,7 @@ namespace Pomelo.Data.MySql
 
             AssertPermissions();
 
-#if !NETSTANDARD1_3
+#if !NETSTANDARD1_6
             // if we are auto enlisting in a current transaction, then we will be
             // treating the connection as pooled
             if (Settings.AutoEnlist && Transaction.Current != null)
@@ -449,7 +455,7 @@ namespace Pomelo.Data.MySql
             currentSettings = driver.Settings;
         }
 #endif
-#if !NETSTANDARD1_3
+#if !NETSTANDARD1_6
                 if (Settings.Pooling)
                 {
                     MySqlPool pool = MySqlPoolManager.GetPool(currentSettings);
@@ -466,8 +472,8 @@ namespace Pomelo.Data.MySql
                 }
 #else
                 if (driver == null || !driver.IsOpen)
-                        driver = Driver.Create(currentSettings);
-                    procedureCache = new ProcedureCache((int)Settings.ProcedureCacheSize);
+                    driver = Driver.Create(currentSettings);
+                procedureCache = new ProcedureCache((int)Settings.ProcedureCacheSize);
 #endif
             }
             catch (Exception ex)
@@ -491,7 +497,7 @@ namespace Pomelo.Data.MySql
 
             // if we are opening up inside a current transaction, then autoenlist
             // TODO: control this with a connection string option
-#if !NETSTANDARD1_3
+#if !NETSTANDARD1_6
             if (Transaction.Current != null && Settings.AutoEnlist)
                 EnlistTransaction(Transaction.Current);
 #endif
@@ -565,7 +571,7 @@ namespace Pomelo.Data.MySql
             if (State == ConnectionState.Closed) return;
 
             if (Reader != null)
-#if !NETSTANDARD1_3
+#if !NETSTANDARD1_6
                 foreach (var x in Reader)
                     x.Close();
 #else
@@ -577,11 +583,11 @@ namespace Pomelo.Data.MySql
             // will be null on the second time through
             if (driver != null)
             {
-#if !NETSTANDARD1_3
+#if !NETSTANDARD1_6
                 if (driver.CurrentTransaction == null)
 #endif
-                    CloseFully();
-#if !NETSTANDARD1_3
+                CloseFully();
+#if !NETSTANDARD1_6
                 else
                     driver.IsInActiveUse = false;
 #endif
@@ -632,8 +638,8 @@ namespace Pomelo.Data.MySql
                 driver.ResetTimeout(5000);
                 if (Reader != null)
                 {
-#if NETSTANDARD1_3
-                    foreach(var x in Reader)
+#if NETSTANDARD1_6
+                    foreach (var x in Reader)
                         x.Dispose();
 #else
                     foreach (var x in Reader)
@@ -667,8 +673,15 @@ namespace Pomelo.Data.MySql
             {
                 c.isKillQueryConnection = true;
                 c.Open();
-                //string commandText = "KILL QUERY " + ServerThread;
-                string commandText = string.Format("KILL QUERY '{0}'", ServerThread);
+                string commandText;
+                if (UseDRDS)
+                {
+                    commandText = string.Format("KILL '{0}'", ServerThread);
+                }
+                else
+                {
+                    commandText = "KILL QUERY " + ServerThread;
+                }
                 MySqlCommand cmd = new MySqlCommand(commandText, c);
                 cmd.CommandTimeout = timeout;
                 cmd.ExecuteNonQuery();
@@ -767,7 +780,7 @@ namespace Pomelo.Data.MySql
 
         internal void Throw(Exception ex)
         {
-#if !NETSTANDARD1_3
+#if !NETSTANDARD1_6
             if (exceptionInterceptor == null)
                 throw ex;
             exceptionInterceptor.Throw(ex);

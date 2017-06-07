@@ -168,7 +168,7 @@ namespace zlib
 			return System.Text.UTF8Encoding.UTF8.GetChars(byteArray);
 		}
 
-#if !NETSTANDARD1_3
+#if !NETSTANDARD1_6
 		/*******************************/
 		/// <summary>
 		/// Writes an object to the specified Stream

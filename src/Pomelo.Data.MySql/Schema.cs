@@ -13,7 +13,7 @@ namespace Pomelo.Data.MySql
   {
     private List<SchemaColumn> columns = new List<SchemaColumn>();
     private List<MySqlSchemaRow> rows = new List<MySqlSchemaRow>();
-#if NET451
+#if NET46
     private DataTable _table = null;
 #endif
 
@@ -28,7 +28,7 @@ namespace Pomelo.Data.MySql
       Name = name;
     }
 
-#if NET451
+#if NET46
     public MySqlSchemaCollection(DataTable dt) : this()
     {
       // cache the original datatable to avoid the overhead of creating again whenever possible.
@@ -111,7 +111,7 @@ namespace Pomelo.Data.MySql
       return r;
     }
 
-#if NET451
+#if NET46
     internal DataTable AsDataTable()
     {
       if (_table != null) return _table;

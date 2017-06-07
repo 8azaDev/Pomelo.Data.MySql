@@ -30,7 +30,7 @@ namespace Pomelo.Data.MySql
         internal int timeZoneOffset;
         private DateTime idleSince;
 
-#if !NETSTANDARD1_3
+#if !NETSTANDARD1_6
         protected MySqlPromotableTransaction currentTransaction;
         protected bool inActiveUse;
 #endif
@@ -93,7 +93,7 @@ namespace Pomelo.Data.MySql
             set { encoding = value; }
         }
 
-#if !NETSTANDARD1_3
+#if !NETSTANDARD1_6
         public MySqlPromotableTransaction CurrentTransaction
         {
             get { return currentTransaction; }
@@ -174,7 +174,7 @@ namespace Pomelo.Data.MySql
         public static Driver Create(MySqlConnectionStringBuilder settings)
         {
             Driver d = null;
-#if !NETSTANDARD1_3
+#if !NETSTANDARD1_6
             try
             {
                 if (MySqlTrace.QueryAnalysisEnabled || settings.Logging || settings.UseUsageAdvisor)

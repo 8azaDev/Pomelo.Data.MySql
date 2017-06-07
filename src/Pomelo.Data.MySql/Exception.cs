@@ -3,7 +3,7 @@
 
 using System;
 using System.Data.Common;
-#if NET451
+#if NET46
 using System.Runtime.Serialization;
 #endif
 
@@ -13,7 +13,7 @@ namespace Pomelo.Data.MySql
     /// The exception that is thrown when MySQL returns an error. This class cannot be inherited.
     /// </summary>
     /// <include file='docs/MySqlException.xml' path='MyDocs/MyMembers[@name="Class"]/*'/>
-#if NET451
+#if NET46
     
 #endif
   public sealed class MySqlException : DbException
@@ -53,7 +53,7 @@ namespace Pomelo.Data.MySql
     {
     }
 
-#if NET451
+#if NET46
     private MySqlException(SerializationInfo info, StreamingContext context)
       : base(info, context)
     {

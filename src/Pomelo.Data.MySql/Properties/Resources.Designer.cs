@@ -8,491 +8,596 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Pomelo.Data.MySql {
-    using System;
-    using System.Reflection;
-    
-    
+using System.Reflection;
+
+namespace Pomelo.Data.MySql
+{
     /// <summary>
-    ///    强类型资源类，用于查找本地化字符串，等等。
+    ///   一个强类型的资源类，用于查找本地化的字符串等。
     /// </summary>
-    // 此类已由 StronglyTypedResourceBuilder 自动生成
-    // 通过 ResGen 或 Visual Studio 之类的工具提供的类。
-    // 若要添加或删除成员，请编辑 .ResX 文件，然后重新运行 ResGen
-    // (使用 /str 选项)，或重新生成 VS 项目。
+    // 此类是由 StronglyTypedResourceBuilder
+    // 类通过类似于 ResGen 或 Visual Studio 的工具自动生成的。
+    // 若要添加或移除成员，请编辑 .ResX 文件，然后重新运行 ResGen
+    // (以 /str 作为命令选项)，或重新生成 VS 项目。
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    public class Resources {
-        
+    internal class Resources
+    {
+
         private static global::System.Resources.ResourceManager resourceMan;
-        
+
         private static global::System.Globalization.CultureInfo resourceCulture;
-        
-        internal Resources() {
+
+        [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
+        internal Resources()
+        {
         }
-        
+
         /// <summary>
-        ///    返回此类使用的缓存 ResourceManager 实例。
+        ///   返回此类使用的缓存的 ResourceManager 实例。
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        public static global::System.Resources.ResourceManager ResourceManager {
-            get {
-                if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Pomelo.Data.MySql.resources", typeof(Resources).GetTypeInfo().Assembly);
+        internal static global::System.Resources.ResourceManager ResourceManager
+        {
+            get
+            {
+                if (object.ReferenceEquals(resourceMan, null))
+                {
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Pomelo.Data.MySql.Properties.Resources", typeof(Resources).GetTypeInfo().Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
             }
         }
-        
+
         /// <summary>
-        ///    重写所有项的当前线程的 CurrentUICulture 属性
-        ///    使用此强类型资源类进行资源查找。
+        ///   使用此强类型资源类，为所有资源查找
+        ///   重写当前线程的 CurrentUICulture 属性。
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        public static global::System.Globalization.CultureInfo Culture {
-            get {
+        internal static global::System.Globalization.CultureInfo Culture
+        {
+            get
+            {
                 return resourceCulture;
             }
-            set {
+            set
+            {
                 resourceCulture = value;
             }
         }
-        
+
         /// <summary>
-        ///    查找与 Improper MySqlCommandBuilder state: adapter is null 类似的本地化字符串。
+        ///   查找类似 Improper MySqlCommandBuilder state: adapter is null 的本地化字符串。
         /// </summary>
-        public static string AdapterIsNull {
-            get {
+        internal static string AdapterIsNull
+        {
+            get
+            {
                 return ResourceManager.GetString("AdapterIsNull", resourceCulture);
             }
         }
-        
+
         /// <summary>
-        ///    查找与 Improper MySqlCommandBuilder state: adapter&apos;s SelectCommand is null 类似的本地化字符串。
+        ///   查找类似 Improper MySqlCommandBuilder state: adapter&apos;s SelectCommand is null 的本地化字符串。
         /// </summary>
-        public static string AdapterSelectIsNull {
-            get {
+        internal static string AdapterSelectIsNull
+        {
+            get
+            {
                 return ResourceManager.GetString("AdapterSelectIsNull", resourceCulture);
             }
         }
-        
+
         /// <summary>
-        ///    查找与 Invalid attempt to access a field before calling Read() 类似的本地化字符串。
+        ///   查找类似 Invalid attempt to access a field before calling Read() 的本地化字符串。
         /// </summary>
-        public static string AttemptToAccessBeforeRead {
-            get {
+        internal static string AttemptToAccessBeforeRead
+        {
+            get
+            {
                 return ResourceManager.GetString("AttemptToAccessBeforeRead", resourceCulture);
             }
         }
-        
+
         /// <summary>
-        ///    查找与 Authentication to host &apos;{0}&apos; for user &apos;{1}&apos; using method &apos;{2}&apos; failed with message: {3} 类似的本地化字符串。
+        ///   查找类似 Authentication to host &apos;{0}&apos; for user &apos;{1}&apos; using method &apos;{2}&apos; failed with message: {3} 的本地化字符串。
         /// </summary>
-        public static string AuthenticationFailed {
-            get {
+        internal static string AuthenticationFailed
+        {
+            get
+            {
                 return ResourceManager.GetString("AuthenticationFailed", resourceCulture);
             }
         }
-        
+
         /// <summary>
-        ///    查找与 Authentication method &apos;{0}&apos; not supported by any of the available plugins. 类似的本地化字符串。
+        ///   查找类似 Authentication method &apos;{0}&apos; not supported by any of the available plugins. 的本地化字符串。
         /// </summary>
-        public static string AuthenticationMethodNotSupported {
-            get {
+        internal static string AuthenticationMethodNotSupported
+        {
+            get
+            {
                 return ResourceManager.GetString("AuthenticationMethodNotSupported", resourceCulture);
             }
         }
-        
+
         /// <summary>
-        ///    查找与 Version string not in acceptable format 类似的本地化字符串。
+        ///   查找类似 Version string not in acceptable format 的本地化字符串。
         /// </summary>
-        public static string BadVersionFormat {
-            get {
+        internal static string BadVersionFormat
+        {
+            get
+            {
                 return ResourceManager.GetString("BadVersionFormat", resourceCulture);
             }
         }
-        
+
         /// <summary>
-        ///    查找与  The buffer cannot be null 类似的本地化字符串。
+        ///   查找类似  The buffer cannot be null 的本地化字符串。
         /// </summary>
-        public static string BufferCannotBeNull {
-            get {
+        internal static string BufferCannotBeNull
+        {
+            get
+            {
                 return ResourceManager.GetString("BufferCannotBeNull", resourceCulture);
             }
         }
-        
+
         /// <summary>
-        ///    查找与  Buffer is not large enough 类似的本地化字符串。
+        ///   查找类似  Buffer is not large enough 的本地化字符串。
         /// </summary>
-        public static string BufferNotLargeEnough {
-            get {
+        internal static string BufferNotLargeEnough
+        {
+            get
+            {
                 return ResourceManager.GetString("BufferNotLargeEnough", resourceCulture);
             }
         }
-        
+
         /// <summary>
-        ///    查找与 Canceling an executing query requires MySQL 5.0 or higher. 类似的本地化字符串。
+        ///   查找类似 Canceling an executing query requires MySQL 5.0 or higher. 的本地化字符串。
         /// </summary>
-        public static string CancelNeeds50 {
-            get {
+        internal static string CancelNeeds50
+        {
+            get
+            {
                 return ResourceManager.GetString("CancelNeeds50", resourceCulture);
             }
         }
-        
+
         /// <summary>
-        ///    查找与 Canceling an active query is only supported on MySQL 5.0.0 and above.  类似的本地化字符串。
+        ///   查找类似 Canceling an active query is only supported on MySQL 5.0.0 and above.  的本地化字符串。
         /// </summary>
-        public static string CancelNotSupported {
-            get {
+        internal static string CancelNotSupported
+        {
+            get
+            {
                 return ResourceManager.GetString("CancelNotSupported", resourceCulture);
             }
         }
-        
+
         /// <summary>
-        ///    查找与 Parameters can only be derived for commands using the StoredProcedure command type. 类似的本地化字符串。
+        ///   查找类似 Parameters can only be derived for commands using the StoredProcedure command type. 的本地化字符串。
         /// </summary>
-        public static string CanNotDeriveParametersForTextCommands {
-            get {
+        internal static string CanNotDeriveParametersForTextCommands
+        {
+            get
+            {
                 return ResourceManager.GetString("CanNotDeriveParametersForTextCommands", resourceCulture);
             }
         }
-        
+
         /// <summary>
-        ///    查找与 MySqlCommandBuilder does not support multi-table statements 类似的本地化字符串。
+        ///   查找类似 MySqlCommandBuilder does not support multi-table statements 的本地化字符串。
         /// </summary>
-        public static string CBMultiTableNotSupported {
-            get {
+        internal static string CBMultiTableNotSupported
+        {
+            get
+            {
                 return ResourceManager.GetString("CBMultiTableNotSupported", resourceCulture);
             }
         }
-        
+
         /// <summary>
-        ///    查找与 MySqlCommandBuilder cannot operate on tables with no unique or key columns 类似的本地化字符串。
+        ///   查找类似 MySqlCommandBuilder cannot operate on tables with no unique or key columns 的本地化字符串。
         /// </summary>
-        public static string CBNoKeyColumn {
-            get {
+        internal static string CBNoKeyColumn
+        {
+            get
+            {
                 return ResourceManager.GetString("CBNoKeyColumn", resourceCulture);
             }
         }
-        
+
         /// <summary>
-        ///    查找与 Chaos isolation level is not supported 类似的本地化字符串。
+        ///   查找类似 Chaos isolation level is not supported 的本地化字符串。
         /// </summary>
-        public static string ChaosNotSupported {
-            get {
+        internal static string ChaosNotSupported
+        {
+            get
+            {
                 return ResourceManager.GetString("ChaosNotSupported", resourceCulture);
             }
         }
-        
+
         /// <summary>
-        ///    查找与 The CommandText property has not been properly initialized. 类似的本地化字符串。
+        ///   查找类似 The CommandText property has not been properly initialized. 的本地化字符串。
         /// </summary>
-        public static string CommandTextNotInitialized {
-            get {
+        internal static string CommandTextNotInitialized
+        {
+            get
+            {
                 return ResourceManager.GetString("CommandTextNotInitialized", resourceCulture);
             }
         }
-        
+
         /// <summary>
-        ///    查找与 The connection is already open. 类似的本地化字符串。
+        ///   查找类似 The connection is already open. 的本地化字符串。
         /// </summary>
-        public static string ConnectionAlreadyOpen {
-            get {
+        internal static string ConnectionAlreadyOpen
+        {
+            get
+            {
                 return ResourceManager.GetString("ConnectionAlreadyOpen", resourceCulture);
             }
         }
-        
+
         /// <summary>
-        ///    查找与 Connection unexpectedly terminated. 类似的本地化字符串。
+        ///   查找类似 Connection unexpectedly terminated. 的本地化字符串。
         /// </summary>
-        public static string ConnectionBroken {
-            get {
+        internal static string ConnectionBroken
+        {
+            get
+            {
                 return ResourceManager.GetString("ConnectionBroken", resourceCulture);
             }
         }
-        
+
         /// <summary>
-        ///    查找与 Connection must be valid and open 类似的本地化字符串。
+        ///   查找类似 Connection must be valid and open 的本地化字符串。
         /// </summary>
-        public static string ConnectionMustBeOpen {
-            get {
+        internal static string ConnectionMustBeOpen
+        {
+            get
+            {
                 return ResourceManager.GetString("ConnectionMustBeOpen", resourceCulture);
             }
         }
-        
+
         /// <summary>
-        ///    查找与 The connection is not open. 类似的本地化字符串。
+        ///   查找类似 The connection is not open. 的本地化字符串。
         /// </summary>
-        public static string ConnectionNotOpen {
-            get {
+        internal static string ConnectionNotOpen
+        {
+            get
+            {
                 return ResourceManager.GetString("ConnectionNotOpen", resourceCulture);
             }
         }
-        
+
         /// <summary>
-        ///    查找与 The connection property has not been set or is null. 类似的本地化字符串。
+        ///   查找类似 The connection property has not been set or is null. 的本地化字符串。
         /// </summary>
-        public static string ConnectionNotSet {
-            get {
+        internal static string ConnectionNotSet
+        {
+            get
+            {
                 return ResourceManager.GetString("ConnectionNotSet", resourceCulture);
             }
         }
-        
+
         /// <summary>
-        ///    查找与 Could not find specified column in results: {0} 类似的本地化字符串。
+        ///   查找类似 Could not find specified column in results: {0} 的本地化字符串。
         /// </summary>
-        public static string CouldNotFindColumnName {
-            get {
+        internal static string CouldNotFindColumnName
+        {
+            get
+            {
                 return ResourceManager.GetString("CouldNotFindColumnName", resourceCulture);
             }
         }
-        
+
         /// <summary>
-        ///    查找与  Count cannot be negative 类似的本地化字符串。
+        ///   查找类似  Count cannot be negative 的本地化字符串。
         /// </summary>
-        public static string CountCannotBeNegative {
-            get {
+        internal static string CountCannotBeNegative
+        {
+            get
+            {
                 return ResourceManager.GetString("CountCannotBeNegative", resourceCulture);
             }
         }
-        
+
         /// <summary>
-        ///    查找与 SetLength is not a valid operation on CompressedStream 类似的本地化字符串。
+        ///   查找类似 SetLength is not a valid operation on CompressedStream 的本地化字符串。
         /// </summary>
-        public static string CSNoSetLength {
-            get {
+        internal static string CSNoSetLength
+        {
+            get
+            {
                 return ResourceManager.GetString("CSNoSetLength", resourceCulture);
             }
         }
-        
+
         /// <summary>
-        ///    查找与 The given value was not in a supported format. 类似的本地化字符串。
+        ///   查找类似 The given value was not in a supported format. 的本地化字符串。
         /// </summary>
-        public static string DataNotInSupportedFormat {
-            get {
+        internal static string DataNotInSupportedFormat
+        {
+            get
+            {
                 return ResourceManager.GetString("DataNotInSupportedFormat", resourceCulture);
             }
         }
-        
+
         /// <summary>
-        ///    查找与 There is already an open DataReader associated with this Connection which must be closed first. 类似的本地化字符串。
+        ///   查找类似 There is already an open DataReader associated with this Connection which must be closed first. 的本地化字符串。
         /// </summary>
-        public static string DataReaderOpen {
-            get {
+        internal static string DataReaderOpen
+        {
+            get
+            {
                 return ResourceManager.GetString("DataReaderOpen", resourceCulture);
             }
         }
-        
+
         /// <summary>
-        ///    查找与 The default connection encoding was not found. Please report this as a bug along with your connection string and system details. 类似的本地化字符串。
+        ///   查找类似 The default connection encoding was not found. Please report this as a bug along with your connection string and system details. 的本地化字符串。
         /// </summary>
-        public static string DefaultEncodingNotFound {
-            get {
+        internal static string DefaultEncodingNotFound
+        {
+            get
+            {
                 return ResourceManager.GetString("DefaultEncodingNotFound", resourceCulture);
             }
         }
-        
+
         /// <summary>
-        ///    查找与 MySQL Connector/Net does not currently support distributed transactions. 类似的本地化字符串。
+        ///   查找类似 MySQL Connector/Net does not currently support distributed transactions. 的本地化字符串。
         /// </summary>
-        public static string DistributedTxnNotSupported {
-            get {
+        internal static string DistributedTxnNotSupported
+        {
+            get
+            {
                 return ResourceManager.GetString("DistributedTxnNotSupported", resourceCulture);
             }
         }
-        
+
         /// <summary>
-        ///    查找与 Error creating socket connection 类似的本地化字符串。
+        ///   查找类似 Error creating socket connection 的本地化字符串。
         /// </summary>
-        public static string ErrorCreatingSocket {
-            get {
+        internal static string ErrorCreatingSocket
+        {
+            get
+            {
                 return ResourceManager.GetString("ErrorCreatingSocket", resourceCulture);
             }
         }
-        
+
         /// <summary>
-        ///    查找与 Fatal error encountered during command execution. 类似的本地化字符串。
+        ///   查找类似 Fatal error encountered during command execution. 的本地化字符串。
         /// </summary>
-        public static string FatalErrorDuringExecute {
-            get {
+        internal static string FatalErrorDuringExecute
+        {
+            get
+            {
                 return ResourceManager.GetString("FatalErrorDuringExecute", resourceCulture);
             }
         }
-        
+
         /// <summary>
-        ///    查找与 Fatal error encountered during data read. 类似的本地化字符串。
+        ///   查找类似 Fatal error encountered during data read. 的本地化字符串。
         /// </summary>
-        public static string FatalErrorDuringRead {
-            get {
+        internal static string FatalErrorDuringRead
+        {
+            get
+            {
                 return ResourceManager.GetString("FatalErrorDuringRead", resourceCulture);
             }
         }
-        
+
         /// <summary>
-        ///    查找与 Fatal error encountered attempting to read the resultset. 类似的本地化字符串。
+        ///   查找类似 Fatal error encountered attempting to read the resultset. 的本地化字符串。
         /// </summary>
-        public static string FatalErrorReadingResult {
-            get {
+        internal static string FatalErrorReadingResult
+        {
+            get
+            {
                 return ResourceManager.GetString("FatalErrorReadingResult", resourceCulture);
             }
         }
-        
+
         /// <summary>
-        ///    查找与 File based certificates are only supported when connecting to MySQL Server 5.1 or greater. 类似的本地化字符串。
+        ///   查找类似 File based certificates are only supported when connecting to MySQL Server 5.1 or greater. 的本地化字符串。
         /// </summary>
-        public static string FileBasedCertificateNotSupported {
-            get {
+        internal static string FileBasedCertificateNotSupported
+        {
+            get
+            {
                 return ResourceManager.GetString("FileBasedCertificateNotSupported", resourceCulture);
             }
         }
-        
+
         /// <summary>
-        ///    查找与 From index and length use more bytes than from contains 类似的本地化字符串。
+        ///   查找类似 From index and length use more bytes than from contains 的本地化字符串。
         /// </summary>
-        public static string FromAndLengthTooBig {
-            get {
+        internal static string FromAndLengthTooBig
+        {
+            get
+            {
                 return ResourceManager.GetString("FromAndLengthTooBig", resourceCulture);
             }
         }
-        
+
         /// <summary>
-        ///    查找与 From index must be a valid index inside the from buffer 类似的本地化字符串。
+        ///   查找类似 From index must be a valid index inside the from buffer 的本地化字符串。
         /// </summary>
-        public static string FromIndexMustBeValid {
-            get {
+        internal static string FromIndexMustBeValid
+        {
+            get
+            {
                 return ResourceManager.GetString("FromIndexMustBeValid", resourceCulture);
             }
         }
-        
+
         /// <summary>
-        ///    查找与 Call to GetHostEntry failed after {0} while querying for hostname &apos;{1}&apos;: SocketErrorCode={2}, ErrorCode={3}, NativeErrorCode={4}. 类似的本地化字符串。
+        ///   查找类似 Call to GetHostEntry failed after {0} while querying for hostname &apos;{1}&apos;: SocketErrorCode={2}, ErrorCode={3}, NativeErrorCode={4}. 的本地化字符串。
         /// </summary>
-        public static string GetHostEntryFailed {
-            get {
+        internal static string GetHostEntryFailed
+        {
+            get
+            {
                 return ResourceManager.GetString("GetHostEntryFailed", resourceCulture);
             }
         }
-        
+
         /// <summary>
-        ///    查找与 Retrieving procedure metadata for {0} from server. 类似的本地化字符串。
+        ///   查找类似 Retrieving procedure metadata for {0} from server. 的本地化字符串。
         /// </summary>
-        public static string HardProcQuery {
-            get {
+        internal static string HardProcQuery
+        {
+            get
+            {
                 return ResourceManager.GetString("HardProcQuery", resourceCulture);
             }
         }
-        
+
         /// <summary>
-        ///    查找与 Value has an unsupported format. 类似的本地化字符串。
+        ///   查找类似 Value has an unsupported format. 的本地化字符串。
         /// </summary>
-        public static string ImproperValueFormat {
-            get {
+        internal static string ImproperValueFormat
+        {
+            get
+            {
                 return ResourceManager.GetString("ImproperValueFormat", resourceCulture);
             }
         }
-        
+
         /// <summary>
-        ///    查找与 An incorrect response was received from the server. 类似的本地化字符串。
+        ///   查找类似 An incorrect response was received from the server. 的本地化字符串。
         /// </summary>
-        public static string IncorrectTransmission {
-            get {
+        internal static string IncorrectTransmission
+        {
+            get
+            {
                 return ResourceManager.GetString("IncorrectTransmission", resourceCulture);
             }
         }
-        
+
         /// <summary>
-        ///    查找与 Index and length use more bytes than to has room for 类似的本地化字符串。
+        ///   查找类似 Index and length use more bytes than to has room for 的本地化字符串。
         /// </summary>
-        public static string IndexAndLengthTooBig {
-            get {
+        internal static string IndexAndLengthTooBig
+        {
+            get
+            {
                 return ResourceManager.GetString("IndexAndLengthTooBig", resourceCulture);
             }
         }
-        
+
         /// <summary>
-        ///    查找与 Index must be a valid position in the buffer 类似的本地化字符串。
+        ///   查找类似 Index must be a valid position in the buffer 的本地化字符串。
         /// </summary>
-        public static string IndexMustBeValid {
-            get {
+        internal static string IndexMustBeValid
+        {
+            get
+            {
                 return ResourceManager.GetString("IndexMustBeValid", resourceCulture);
             }
         }
-        
+
         /// <summary>
-        ///    查找与 You have specified an invalid column ordinal. 类似的本地化字符串。
+        ///   查找类似 You have specified an invalid column ordinal. 的本地化字符串。
         /// </summary>
-        public static string InvalidColumnOrdinal {
-            get {
+        internal static string InvalidColumnOrdinal
+        {
+            get
+            {
                 return ResourceManager.GetString("InvalidColumnOrdinal", resourceCulture);
             }
         }
-        
+
         /// <summary>
-        ///    查找与 The requested value &apos;{0}&apos; is invalid for the given keyword &apos;{1}&apos;. 类似的本地化字符串。
+        ///   查找类似 The requested value &apos;{0}&apos; is invalid for the given keyword &apos;{1}&apos;. 的本地化字符串。
         /// </summary>
-        public static string InvalidConnectionStringValue {
-            get {
+        internal static string InvalidConnectionStringValue
+        {
+            get
+            {
                 return ResourceManager.GetString("InvalidConnectionStringValue", resourceCulture);
             }
         }
-        
+
         /// <summary>
-        ///    查找与 Microsecond must be a value between 0 and 999999. 类似的本地化字符串。
+        ///   查找类似 Microsecond must be a value between 0 and 999999. 的本地化字符串。
         /// </summary>
-        public static string InvalidMicrosecondValue {
-            get {
+        internal static string InvalidMicrosecondValue
+        {
+            get
+            {
                 return ResourceManager.GetString("InvalidMicrosecondValue", resourceCulture);
             }
         }
-        
+
         /// <summary>
-        ///    查找与 Millisecond must be a value between 0 and 999. For more precision use Microsecond. 类似的本地化字符串。
+        ///   查找类似 Millisecond must be a value between 0 and 999. For more precision use Microsecond. 的本地化字符串。
         /// </summary>
-        public static string InvalidMillisecondValue {
-            get {
+        internal static string InvalidMillisecondValue
+        {
+            get
+            {
                 return ResourceManager.GetString("InvalidMillisecondValue", resourceCulture);
             }
         }
-        
+
         /// <summary>
-        ///    查找与 Procedure or function &apos;{0}&apos; cannot be found in database &apos;{1}&apos;. 类似的本地化字符串。
+        ///   查找类似 Procedure or function &apos;{0}&apos; cannot be found in database &apos;{1}&apos;. 的本地化字符串。
         /// </summary>
-        public static string InvalidProcName {
-            get {
+        internal static string InvalidProcName
+        {
+            get
+            {
                 return ResourceManager.GetString("InvalidProcName", resourceCulture);
             }
         }
-        
+
         /// <summary>
-        ///    查找与 &apos;{0}&apos; is an illegal value for a boolean option. 类似的本地化字符串。
+        ///   查找类似 &apos;{0}&apos; is an illegal value for a boolean option. 的本地化字符串。
         /// </summary>
-        public static string InvalidValueForBoolean {
-            get {
+        internal static string InvalidValueForBoolean
+        {
+            get
+            {
                 return ResourceManager.GetString("InvalidValueForBoolean", resourceCulture);
             }
         }
-        
+
         /// <summary>
-        ///    查找与 Keyword does not allow null values. 类似的本地化字符串。
+        ///   查找类似 Keyword does not allow null values. 的本地化字符串。
         /// </summary>
-        public static string KeywordNoNull {
-            get {
+        internal static string KeywordNoNull
+        {
+            get
+            {
                 return ResourceManager.GetString("KeywordNoNull", resourceCulture);
             }
         }
-        
+
         /// <summary>
-        ///    查找与 Keyword not supported. 类似的本地化字符串。
+        ///   查找类似 Keyword not supported. 的本地化字符串。
         /// </summary>
-        public static string KeywordNotSupported {
-            get {
+        internal static string KeywordNotSupported
+        {
+            get
+            {
                 return ResourceManager.GetString("KeywordNotSupported", resourceCulture);
             }
         }
-        
+
         /// <summary>
-        ///    查找与  ACCESSIBLE
+        ///   查找类似 ACCESSIBLE
         ///ADD
         ///ALL
         ///ALTER
@@ -548,367 +653,447 @@ namespace Pomelo.Data.MySql {
         ///DISTINCTROW
         ///DIV
         ///DOUBLE
-        ///DRO [字符串的其余部分被截断]”； 类似的本地化字符串。
+        ///DRO [字符串的其余部分被截断]&quot;; 的本地化字符串。
         /// </summary>
-        public static string keywords {
-            get {
+        internal static string keywords
+        {
+            get
+            {
                 return ResourceManager.GetString("keywords", resourceCulture);
             }
         }
-        
+
         /// <summary>
-        ///    查找与 Mixing named and unnamed parameters is not allowed. 类似的本地化字符串。
+        ///   查找类似 Mixing named and unnamed parameters is not allowed. 的本地化字符串。
         /// </summary>
-        public static string MixedParameterNamingNotAllowed {
-            get {
+        internal static string MixedParameterNamingNotAllowed
+        {
+            get
+            {
                 return ResourceManager.GetString("MixedParameterNamingNotAllowed", resourceCulture);
             }
         }
-        
+
         /// <summary>
-        ///    查找与 INTERNAL ERROR:  More than one output parameter row detected. 类似的本地化字符串。
+        ///   查找类似 INTERNAL ERROR:  More than one output parameter row detected. 的本地化字符串。
         /// </summary>
-        public static string MoreThanOneOPRow {
-            get {
+        internal static string MoreThanOneOPRow
+        {
+            get
+            {
                 return ResourceManager.GetString("MoreThanOneOPRow", resourceCulture);
             }
         }
-        
+
         /// <summary>
-        ///    查找与 Multiple simultaneous connections or connections with different connection strings inside the same transaction are not currently supported. 类似的本地化字符串。
+        ///   查找类似 Multiple simultaneous connections or connections with different connection strings inside the same transaction are not currently supported. 的本地化字符串。
         /// </summary>
-        public static string MultipleConnectionsInTransactionNotSupported {
-            get {
+        internal static string MultipleConnectionsInTransactionNotSupported
+        {
+            get
+            {
                 return ResourceManager.GetString("MultipleConnectionsInTransactionNotSupported", resourceCulture);
             }
         }
-        
+
         /// <summary>
-        ///    查找与 NamedPipeStream does not support seeking 类似的本地化字符串。
+        ///   查找类似 NamedPipeStream does not support seeking 的本地化字符串。
         /// </summary>
-        public static string NamedPipeNoSeek {
-            get {
+        internal static string NamedPipeNoSeek
+        {
+            get
+            {
                 return ResourceManager.GetString("NamedPipeNoSeek", resourceCulture);
             }
         }
-        
+
         /// <summary>
-        ///    查找与 NamedPipeStream doesn&apos;t support SetLength 类似的本地化字符串。
+        ///   查找类似 NamedPipeStream doesn&apos;t support SetLength 的本地化字符串。
         /// </summary>
-        public static string NamedPipeNoSetLength {
-            get {
+        internal static string NamedPipeNoSetLength
+        {
+            get
+            {
                 return ResourceManager.GetString("NamedPipeNoSetLength", resourceCulture);
             }
         }
-        
+
         /// <summary>
-        ///    查找与 The new value must be a MySqlParameter object. 类似的本地化字符串。
+        ///   查找类似 The new value must be a MySqlParameter object. 的本地化字符串。
         /// </summary>
-        public static string NewValueShouldBeMySqlParameter {
-            get {
+        internal static string NewValueShouldBeMySqlParameter
+        {
+            get
+            {
                 return ResourceManager.GetString("NewValueShouldBeMySqlParameter", resourceCulture);
             }
         }
-        
+
         /// <summary>
-        ///    查找与 Invalid attempt to call NextResult when the reader is closed. 类似的本地化字符串。
+        ///   查找类似 Invalid attempt to call NextResult when the reader is closed. 的本地化字符串。
         /// </summary>
-        public static string NextResultIsClosed {
-            get {
+        internal static string NextResultIsClosed
+        {
+            get
+            {
                 return ResourceManager.GetString("NextResultIsClosed", resourceCulture);
             }
         }
-        
+
         /// <summary>
-        ///    查找与 When calling stored procedures and &apos;Use Procedure Bodies&apos; is false, all parameters must have their type explicitly set. 类似的本地化字符串。
+        ///   查找类似 When calling stored procedures and &apos;Use Procedure Bodies&apos; is false, all parameters must have their type explicitly set. 的本地化字符串。
         /// </summary>
-        public static string NoBodiesAndTypeNotSet {
-            get {
+        internal static string NoBodiesAndTypeNotSet
+        {
+            get
+            {
                 return ResourceManager.GetString("NoBodiesAndTypeNotSet", resourceCulture);
             }
         }
-        
+
         /// <summary>
-        ///    查找与 Nested transactions are not supported. 类似的本地化字符串。
+        ///   查找类似 Nested transactions are not supported. 的本地化字符串。
         /// </summary>
-        public static string NoNestedTransactions {
-            get {
+        internal static string NoNestedTransactions
+        {
+            get
+            {
                 return ResourceManager.GetString("NoNestedTransactions", resourceCulture);
             }
         }
-        
+
         /// <summary>
-        ///    查找与 The host {0} does not support SSL connections. 类似的本地化字符串。
+        ///   查找类似 The host {0} does not support SSL connections. 的本地化字符串。
         /// </summary>
-        public static string NoServerSSLSupport {
-            get {
+        internal static string NoServerSSLSupport
+        {
+            get
+            {
                 return ResourceManager.GetString("NoServerSSLSupport", resourceCulture);
             }
         }
-        
+
         /// <summary>
-        ///    查找与 Unix sockets are not supported on Windows. 类似的本地化字符串。
+        ///   查找类似 Unix sockets are not supported on Windows. 的本地化字符串。
         /// </summary>
-        public static string NoUnixSocketsOnWindows {
-            get {
+        internal static string NoUnixSocketsOnWindows
+        {
+            get
+            {
                 return ResourceManager.GetString("NoUnixSocketsOnWindows", resourceCulture);
             }
         }
-        
+
         /// <summary>
-        ///    查找与 Cannot retrieve Windows identity for current user. Connections that use  IntegratedSecurity cannot be  pooled. Use either &apos;ConnectionReset=true&apos; or  &apos;Pooling=false&apos; in the connection string to fix. 类似的本地化字符串。
+        ///   查找类似 Cannot retrieve Windows identity for current user. Connections that use  IntegratedSecurity cannot be  pooled. Use either &apos;ConnectionReset=true&apos; or  &apos;Pooling=false&apos; in the connection string to fix. 的本地化字符串。
         /// </summary>
-        public static string NoWindowsIdentity {
-            get {
+        internal static string NoWindowsIdentity
+        {
+            get
+            {
                 return ResourceManager.GetString("NoWindowsIdentity", resourceCulture);
             }
         }
-        
+
         /// <summary>
-        ///    查找与 The object is not open or has been disposed. 类似的本地化字符串。
+        ///   查找类似 The object is not open or has been disposed. 的本地化字符串。
         /// </summary>
-        public static string ObjectDisposed {
-            get {
+        internal static string ObjectDisposed
+        {
+            get
+            {
                 return ResourceManager.GetString("ObjectDisposed", resourceCulture);
             }
         }
-        
+
         /// <summary>
-        ///    查找与  Offset cannot be negative 类似的本地化字符串。
+        ///   查找类似  Offset cannot be negative 的本地化字符串。
         /// </summary>
-        public static string OffsetCannotBeNegative {
-            get {
+        internal static string OffsetCannotBeNegative
+        {
+            get
+            {
                 return ResourceManager.GetString("OffsetCannotBeNegative", resourceCulture);
             }
         }
-        
+
         /// <summary>
-        ///    查找与 Offset must be a valid position in buffer 类似的本地化字符串。
+        ///   查找类似 Offset must be a valid position in buffer 的本地化字符串。
         /// </summary>
-        public static string OffsetMustBeValid {
-            get {
+        internal static string OffsetMustBeValid
+        {
+            get
+            {
                 return ResourceManager.GetString("OffsetMustBeValid", resourceCulture);
             }
         }
-        
+
         /// <summary>
-        ///    查找与 Authentication with old password no longer supported, use 4.1 style passwords. 类似的本地化字符串。
+        ///   查找类似 Authentication with old password no longer supported, use 4.1 style passwords. 的本地化字符串。
         /// </summary>
-        public static string OldPasswordsNotSupported {
-            get {
+        internal static string OldPasswordsNotSupported
+        {
+            get
+            {
                 return ResourceManager.GetString("OldPasswordsNotSupported", resourceCulture);
             }
         }
-        
+
         /// <summary>
-        ///    查找与 Parameter &apos;{0}&apos; has already been defined. 类似的本地化字符串。
+        ///   查找类似 Parameter &apos;{0}&apos; has already been defined. 的本地化字符串。
         /// </summary>
-        public static string ParameterAlreadyDefined {
-            get {
+        internal static string ParameterAlreadyDefined
+        {
+            get
+            {
                 return ResourceManager.GetString("ParameterAlreadyDefined", resourceCulture);
             }
         }
-        
+
         /// <summary>
-        ///    查找与 Parameter cannot have a negative value 类似的本地化字符串。
+        ///   查找类似 Parameter cannot have a negative value 的本地化字符串。
         /// </summary>
-        public static string ParameterCannotBeNegative {
-            get {
+        internal static string ParameterCannotBeNegative
+        {
+            get
+            {
                 return ResourceManager.GetString("ParameterCannotBeNegative", resourceCulture);
             }
         }
-        
+
         /// <summary>
-        ///    查找与 Parameter cannot be null 类似的本地化字符串。
+        ///   查找类似 Parameter cannot be null 的本地化字符串。
         /// </summary>
-        public static string ParameterCannotBeNull {
-            get {
+        internal static string ParameterCannotBeNull
+        {
+            get
+            {
                 return ResourceManager.GetString("ParameterCannotBeNull", resourceCulture);
             }
         }
-        
+
         /// <summary>
-        ///    查找与 Parameter index was not found in Parameter Collection. 类似的本地化字符串。
+        ///   查找类似 Parameter index was not found in Parameter Collection. 的本地化字符串。
         /// </summary>
-        public static string ParameterIndexNotFound {
-            get {
+        internal static string ParameterIndexNotFound
+        {
+            get
+            {
                 return ResourceManager.GetString("ParameterIndexNotFound", resourceCulture);
             }
         }
-        
+
         /// <summary>
-        ///    查找与 Parameter is invalid. 类似的本地化字符串。
+        ///   查找类似 Parameter is invalid. 的本地化字符串。
         /// </summary>
-        public static string ParameterIsInvalid {
-            get {
+        internal static string ParameterIsInvalid
+        {
+            get
+            {
                 return ResourceManager.GetString("ParameterIsInvalid", resourceCulture);
             }
         }
-        
+
         /// <summary>
-        ///    查找与 Parameter &apos;{0}&apos; must be defined. 类似的本地化字符串。
+        ///   查找类似 Parameter &apos;{0}&apos; must be defined. 的本地化字符串。
         /// </summary>
-        public static string ParameterMustBeDefined {
-            get {
+        internal static string ParameterMustBeDefined
+        {
+            get
+            {
                 return ResourceManager.GetString("ParameterMustBeDefined", resourceCulture);
             }
         }
-        
+
         /// <summary>
-        ///    查找与 Parameter &apos;{0}&apos; was not found during prepare. 类似的本地化字符串。
+        ///   查找类似 Parameter &apos;{0}&apos; was not found during prepare. 的本地化字符串。
         /// </summary>
-        public static string ParameterNotFoundDuringPrepare {
-            get {
+        internal static string ParameterNotFoundDuringPrepare
+        {
+            get
+            {
                 return ResourceManager.GetString("ParameterNotFoundDuringPrepare", resourceCulture);
             }
         }
-        
+
         /// <summary>
-        ///    查找与 Password must be valid and contain length characters 类似的本地化字符串。
+        ///   查找类似 Password must be valid and contain length characters 的本地化字符串。
         /// </summary>
-        public static string PasswordMustHaveLegalChars {
-            get {
+        internal static string PasswordMustHaveLegalChars
+        {
+            get
+            {
                 return ResourceManager.GetString("PasswordMustHaveLegalChars", resourceCulture);
             }
         }
-        
+
         /// <summary>
-        ///    查找与 This category includes a series of counters for MySQL. 类似的本地化字符串。
+        ///   查找类似 This category includes a series of counters for MySQL. 的本地化字符串。
         /// </summary>
-        public static string PerfMonCategoryHelp {
-            get {
+        internal static string PerfMonCategoryHelp
+        {
+            get
+            {
                 return ResourceManager.GetString("PerfMonCategoryHelp", resourceCulture);
             }
         }
-        
+
         /// <summary>
-        ///    查找与 .NET Data Provider for MySQL 类似的本地化字符串。
+        ///   查找类似 .NET Data Provider for MySQL 的本地化字符串。
         /// </summary>
-        public static string PerfMonCategoryName {
-            get {
+        internal static string PerfMonCategoryName
+        {
+            get
+            {
                 return ResourceManager.GetString("PerfMonCategoryName", resourceCulture);
             }
         }
-        
+
         /// <summary>
-        ///    查找与 The number of times a procedures metadata had to be queried from the server. 类似的本地化字符串。
+        ///   查找类似 The number of times a procedures metadata had to be queried from the server. 的本地化字符串。
         /// </summary>
-        public static string PerfMonHardProcHelp {
-            get {
+        internal static string PerfMonHardProcHelp
+        {
+            get
+            {
                 return ResourceManager.GetString("PerfMonHardProcHelp", resourceCulture);
             }
         }
-        
+
         /// <summary>
-        ///    查找与 Hard Procedure Queries 类似的本地化字符串。
+        ///   查找类似 Hard Procedure Queries 的本地化字符串。
         /// </summary>
-        public static string PerfMonHardProcName {
-            get {
+        internal static string PerfMonHardProcName
+        {
+            get
+            {
                 return ResourceManager.GetString("PerfMonHardProcName", resourceCulture);
             }
         }
-        
+
         /// <summary>
-        ///    查找与 The number of times a procedures metadata was retrieved from the client-side cache. 类似的本地化字符串。
+        ///   查找类似 The number of times a procedures metadata was retrieved from the client-side cache. 的本地化字符串。
         /// </summary>
-        public static string PerfMonSoftProcHelp {
-            get {
+        internal static string PerfMonSoftProcHelp
+        {
+            get
+            {
                 return ResourceManager.GetString("PerfMonSoftProcHelp", resourceCulture);
             }
         }
-        
+
         /// <summary>
-        ///    查找与 Soft Procedure Queries 类似的本地化字符串。
+        ///   查找类似 Soft Procedure Queries 的本地化字符串。
         /// </summary>
-        public static string PerfMonSoftProcName {
-            get {
+        internal static string PerfMonSoftProcName
+        {
+            get
+            {
                 return ResourceManager.GetString("PerfMonSoftProcName", resourceCulture);
             }
         }
-        
+
         /// <summary>
-        ///    查找与 same name are not supported. 类似的本地化字符串。
+        ///   查找类似 same name are not supported. 的本地化字符串。
         /// </summary>
-        public static string ProcAndFuncSameName {
-            get {
+        internal static string ProcAndFuncSameName
+        {
+            get
+            {
                 return ResourceManager.GetString("ProcAndFuncSameName", resourceCulture);
             }
         }
-        
+
         /// <summary>
-        ///    查找与 Packets larger than max_allowed_packet are not allowed. 类似的本地化字符串。
+        ///   查找类似 Packets larger than max_allowed_packet are not allowed. 的本地化字符串。
         /// </summary>
-        public static string QueryTooLarge {
-            get {
+        internal static string QueryTooLarge
+        {
+            get
+            {
                 return ResourceManager.GetString("QueryTooLarge", resourceCulture);
             }
         }
-        
+
         /// <summary>
-        ///    查找与 Reading from the stream has failed. 类似的本地化字符串。
+        ///   查找类似 Reading from the stream has failed. 的本地化字符串。
         /// </summary>
-        public static string ReadFromStreamFailed {
-            get {
+        internal static string ReadFromStreamFailed
+        {
+            get
+            {
                 return ResourceManager.GetString("ReadFromStreamFailed", resourceCulture);
             }
         }
-        
+
         /// <summary>
-        ///    查找与 Invalid attempt to read a prior column using SequentialAccess 类似的本地化字符串。
+        ///   查找类似 Invalid attempt to read a prior column using SequentialAccess 的本地化字符串。
         /// </summary>
-        public static string ReadingPriorColumnUsingSeqAccess {
-            get {
+        internal static string ReadingPriorColumnUsingSeqAccess
+        {
+            get
+            {
                 return ResourceManager.GetString("ReadingPriorColumnUsingSeqAccess", resourceCulture);
             }
         }
-        
+
         /// <summary>
-        ///    查找与 Replicated connections allow only readonly statements. 类似的本地化字符串。
+        ///   查找类似 Replicated connections allow only readonly statements. 的本地化字符串。
         /// </summary>
-        public static string ReplicatedConnectionsAllowOnlyReadonlyStatements {
-            get {
+        internal static string ReplicatedConnectionsAllowOnlyReadonlyStatements
+        {
+            get
+            {
                 return ResourceManager.GetString("ReplicatedConnectionsAllowOnlyReadonlyStatements", resourceCulture);
             }
         }
-        
+
         /// <summary>
-        ///    查找与 Attempt to connect to &apos;{0}&apos; server failed. 类似的本地化字符串。
+        ///   查找类似 Attempt to connect to &apos;{0}&apos; server failed. 的本地化字符串。
         /// </summary>
-        public static string Replication_ConnectionAttemptFailed {
-            get {
+        internal static string Replication_ConnectionAttemptFailed
+        {
+            get
+            {
                 return ResourceManager.GetString("Replication_ConnectionAttemptFailed", resourceCulture);
             }
         }
-        
+
         /// <summary>
-        ///    查找与 No available server found. 类似的本地化字符串。
+        ///   查找类似 No available server found. 的本地化字符串。
         /// </summary>
-        public static string Replication_NoAvailableServer {
-            get {
+        internal static string Replication_NoAvailableServer
+        {
+            get
+            {
                 return ResourceManager.GetString("Replication_NoAvailableServer", resourceCulture);
             }
         }
-        
+
         /// <summary>
-        ///    查找与 Replication group &apos;{0}&apos; not found. 类似的本地化字符串。
+        ///   查找类似 Replication group &apos;{0}&apos; not found. 的本地化字符串。
         /// </summary>
-        public static string ReplicationGroupNotFound {
-            get {
+        internal static string ReplicationGroupNotFound
+        {
+            get
+            {
                 return ResourceManager.GetString("ReplicationGroupNotFound", resourceCulture);
             }
         }
-        
+
         /// <summary>
-        ///    查找与 Replicated server not found: &apos;{0}&apos; 类似的本地化字符串。
+        ///   查找类似 Replicated server not found: &apos;{0}&apos; 的本地化字符串。
         /// </summary>
-        public static string ReplicationServerNotFound {
-            get {
+        internal static string ReplicationServerNotFound
+        {
+            get
+            {
                 return ResourceManager.GetString("ReplicationServerNotFound", resourceCulture);
             }
         }
-        
+
         /// <summary>
-        ///    查找与  ACCESSIBLE ADD ALL 
+        ///   查找类似 ACCESSIBLE ADD ALL 
         ///ALTER ANALYZE AND 
         ///AS ASC ASENSITIVE 
         ///BEFORE BETWEEN BIGINT 
@@ -927,469 +1112,573 @@ namespace Pomelo.Data.MySql {
         ///DELAYED DELETE DESC 
         ///DESCRIBE DETERMINISTIC DISTINCT 
         ///DISTINCTROW DIV DOUBLE 
-        ///DROP DUA [字符串的其余部分被截断]”； 类似的本地化字符串。
+        ///DROP DUA [字符串的其余部分被截断]&quot;; 的本地化字符串。
         /// </summary>
-        public static string ReservedWords {
-            get {
+        internal static string ReservedWords
+        {
+            get
+            {
                 return ResourceManager.GetString("ReservedWords", resourceCulture);
             }
         }
-        
+
         /// <summary>
-        ///    查找与 Routine &apos;{0}&apos; cannot be found. Either check the spelling or make sure you have sufficient rights to execute the routine. 类似的本地化字符串。
+        ///   查找类似 Routine &apos;{0}&apos; cannot be found. Either check the spelling or make sure you have sufficient rights to execute the routine. 的本地化字符串。
         /// </summary>
-        public static string RoutineNotFound {
-            get {
+        internal static string RoutineNotFound
+        {
+            get
+            {
                 return ResourceManager.GetString("RoutineNotFound", resourceCulture);
             }
         }
-        
+
         /// <summary>
-        ///    查找与 Attempt to call stored function &apos;{0}&apos; without specifying a return parameter 类似的本地化字符串。
+        ///   查找类似 Attempt to call stored function &apos;{0}&apos; without specifying a return parameter 的本地化字符串。
         /// </summary>
-        public static string RoutineRequiresReturnParameter {
-            get {
+        internal static string RoutineRequiresReturnParameter
+        {
+            get
+            {
                 return ResourceManager.GetString("RoutineRequiresReturnParameter", resourceCulture);
             }
         }
-        
+
         /// <summary>
-        ///    查找与 Connector/Net no longer supports server versions prior to 5.0 类似的本地化字符串。
+        ///   查找类似 Connector/Net no longer supports server versions prior to 5.0 的本地化字符串。
         /// </summary>
-        public static string ServerTooOld {
-            get {
+        internal static string ServerTooOld
+        {
+            get
+            {
                 return ResourceManager.GetString("ServerTooOld", resourceCulture);
             }
         }
-        
+
         /// <summary>
-        ///    查找与 Snapshot isolation level is not supported. 类似的本地化字符串。
+        ///   查找类似 Snapshot isolation level is not supported. 的本地化字符串。
         /// </summary>
-        public static string SnapshotNotSupported {
-            get {
+        internal static string SnapshotNotSupported
+        {
+            get
+            {
                 return ResourceManager.GetString("SnapshotNotSupported", resourceCulture);
             }
         }
-        
+
         /// <summary>
-        ///    查找与 Socket streams do not support seeking 类似的本地化字符串。
+        ///   查找类似 Socket streams do not support seeking 的本地化字符串。
         /// </summary>
-        public static string SocketNoSeek {
-            get {
+        internal static string SocketNoSeek
+        {
+            get
+            {
                 return ResourceManager.GetString("SocketNoSeek", resourceCulture);
             }
         }
-        
+
         /// <summary>
-        ///    查找与 Retrieving procedure metadata for {0} from procedure cache. 类似的本地化字符串。
+        ///   查找类似 Retrieving procedure metadata for {0} from procedure cache. 的本地化字符串。
         /// </summary>
-        public static string SoftProcQuery {
-            get {
+        internal static string SoftProcQuery
+        {
+            get
+            {
                 return ResourceManager.GetString("SoftProcQuery", resourceCulture);
             }
         }
-        
+
         /// <summary>
-        ///    查找与 Stored procedures are not supported on this version of MySQL 类似的本地化字符串。
+        ///   查找类似 Stored procedures are not supported on this version of MySQL 的本地化字符串。
         /// </summary>
-        public static string SPNotSupported {
-            get {
+        internal static string SPNotSupported
+        {
+            get
+            {
                 return ResourceManager.GetString("SPNotSupported", resourceCulture);
             }
         }
-        
+
         /// <summary>
-        ///    查找与 The stream has already been closed 类似的本地化字符串。
+        ///   查找类似 The stream has already been closed 的本地化字符串。
         /// </summary>
-        public static string StreamAlreadyClosed {
-            get {
+        internal static string StreamAlreadyClosed
+        {
+            get
+            {
                 return ResourceManager.GetString("StreamAlreadyClosed", resourceCulture);
             }
         }
-        
+
         /// <summary>
-        ///    查找与  The stream does not support reading 类似的本地化字符串。
+        ///   查找类似  The stream does not support reading 的本地化字符串。
         /// </summary>
-        public static string StreamNoRead {
-            get {
+        internal static string StreamNoRead
+        {
+            get
+            {
                 return ResourceManager.GetString("StreamNoRead", resourceCulture);
             }
         }
-        
+
         /// <summary>
-        ///    查找与 The stream does not support writing 类似的本地化字符串。
+        ///   查找类似 The stream does not support writing 的本地化字符串。
         /// </summary>
-        public static string StreamNoWrite {
-            get {
+        internal static string StreamNoWrite
+        {
+            get
+            {
                 return ResourceManager.GetString("StreamNoWrite", resourceCulture);
             }
         }
-        
+
         /// <summary>
-        ///    查找与 Timeout expired.  The timeout period elapsed prior to completion of the operation or the server is not responding. 类似的本地化字符串。
+        ///   查找类似 Timeout expired.  The timeout period elapsed prior to completion of the operation or the server is not responding. 的本地化字符串。
         /// </summary>
-        public static string Timeout {
-            get {
+        internal static string Timeout
+        {
+            get
+            {
                 return ResourceManager.GetString("Timeout", resourceCulture);
             }
         }
-        
+
         /// <summary>
-        ///    查找与 error connecting: Timeout expired.  The timeout period elapsed prior to obtaining a connection from the pool.  This may have occurred because all pooled connections were in use and max pool size was reached. 类似的本地化字符串。
+        ///   查找类似 error connecting: Timeout expired.  The timeout period elapsed prior to obtaining a connection from the pool.  This may have occurred because all pooled connections were in use and max pool size was reached. 的本地化字符串。
         /// </summary>
-        public static string TimeoutGettingConnection {
-            get {
+        internal static string TimeoutGettingConnection
+        {
+            get
+            {
                 return ResourceManager.GetString("TimeoutGettingConnection", resourceCulture);
             }
         }
-        
+
         /// <summary>
-        ///    查找与 {0}: Connection Closed 类似的本地化字符串。
+        ///   查找类似 {0}: Connection Closed 的本地化字符串。
         /// </summary>
-        public static string TraceCloseConnection {
-            get {
+        internal static string TraceCloseConnection
+        {
+            get
+            {
                 return ResourceManager.GetString("TraceCloseConnection", resourceCulture);
             }
         }
-        
+
         /// <summary>
-        ///    查找与 Unable to trace.  There are more than Int32.MaxValue connections in use. 类似的本地化字符串。
+        ///   查找类似 Unable to trace.  There are more than Int32.MaxValue connections in use. 的本地化字符串。
         /// </summary>
-        public static string TraceErrorMoreThanMaxValueConnections {
-            get {
+        internal static string TraceErrorMoreThanMaxValueConnections
+        {
+            get
+            {
                 return ResourceManager.GetString("TraceErrorMoreThanMaxValueConnections", resourceCulture);
             }
         }
-        
+
         /// <summary>
-        ///    查找与 {0}: Error encountered during row fetch. Number = {1}, Message={2} 类似的本地化字符串。
+        ///   查找类似 {0}: Error encountered during row fetch. Number = {1}, Message={2} 的本地化字符串。
         /// </summary>
-        public static string TraceFetchError {
-            get {
+        internal static string TraceFetchError
+        {
+            get
+            {
                 return ResourceManager.GetString("TraceFetchError", resourceCulture);
             }
         }
-        
+
         /// <summary>
-        ///    查找与 {0}: Connection Opened: connection string = &apos;{1}&apos; 类似的本地化字符串。
+        ///   查找类似 {0}: Connection Opened: connection string = &apos;{1}&apos; 的本地化字符串。
         /// </summary>
-        public static string TraceOpenConnection {
-            get {
+        internal static string TraceOpenConnection
+        {
+            get
+            {
                 return ResourceManager.GetString("TraceOpenConnection", resourceCulture);
             }
         }
-        
+
         /// <summary>
-        ///    查找与 {0}: Error encountered attempting to open result: Number={1}, Message={2} 类似的本地化字符串。
+        ///   查找类似 {0}: Error encountered attempting to open result: Number={1}, Message={2} 的本地化字符串。
         /// </summary>
-        public static string TraceOpenResultError {
-            get {
+        internal static string TraceOpenResultError
+        {
+            get
+            {
                 return ResourceManager.GetString("TraceOpenResultError", resourceCulture);
             }
         }
-        
+
         /// <summary>
-        ///    查找与 {0}: Query Closed 类似的本地化字符串。
+        ///   查找类似 {0}: Query Closed 的本地化字符串。
         /// </summary>
-        public static string TraceQueryDone {
-            get {
+        internal static string TraceQueryDone
+        {
+            get
+            {
                 return ResourceManager.GetString("TraceQueryDone", resourceCulture);
             }
         }
-        
+
         /// <summary>
-        ///    查找与 {0}: Query Normalized: {2} 类似的本地化字符串。
+        ///   查找类似 {0}: Query Normalized: {2} 的本地化字符串。
         /// </summary>
-        public static string TraceQueryNormalized {
-            get {
+        internal static string TraceQueryNormalized
+        {
+            get
+            {
                 return ResourceManager.GetString("TraceQueryNormalized", resourceCulture);
             }
         }
-        
+
         /// <summary>
-        ///    查找与 {0}: Query Opened: {2} 类似的本地化字符串。
+        ///   查找类似 {0}: Query Opened: {2} 的本地化字符串。
         /// </summary>
-        public static string TraceQueryOpened {
-            get {
+        internal static string TraceQueryOpened
+        {
+            get
+            {
                 return ResourceManager.GetString("TraceQueryOpened", resourceCulture);
             }
         }
-        
+
         /// <summary>
-        ///    查找与 {0}: Resultset Opened: field(s) = {1}, affected rows = {2}, inserted id = {3} 类似的本地化字符串。
+        ///   查找类似 {0}: Resultset Opened: field(s) = {1}, affected rows = {2}, inserted id = {3} 的本地化字符串。
         /// </summary>
-        public static string TraceResult {
-            get {
+        internal static string TraceResult
+        {
+            get
+            {
                 return ResourceManager.GetString("TraceResult", resourceCulture);
             }
         }
-        
+
         /// <summary>
-        ///    查找与 {0}: Resultset Closed. Total rows={1}, skipped rows={2}, size (bytes)={3} 类似的本地化字符串。
+        ///   查找类似 {0}: Resultset Closed. Total rows={1}, skipped rows={2}, size (bytes)={3} 的本地化字符串。
         /// </summary>
-        public static string TraceResultClosed {
-            get {
+        internal static string TraceResultClosed
+        {
+            get
+            {
                 return ResourceManager.GetString("TraceResultClosed", resourceCulture);
             }
         }
-        
+
         /// <summary>
-        ///    查找与 {0}: Set Database: {1} 类似的本地化字符串。
+        ///   查找类似 {0}: Set Database: {1} 的本地化字符串。
         /// </summary>
-        public static string TraceSetDatabase {
-            get {
+        internal static string TraceSetDatabase
+        {
+            get
+            {
                 return ResourceManager.GetString("TraceSetDatabase", resourceCulture);
             }
         }
-        
+
         /// <summary>
-        ///    查找与 {0}: Statement closed: statement id = {1} 类似的本地化字符串。
+        ///   查找类似 {0}: Statement closed: statement id = {1} 的本地化字符串。
         /// </summary>
-        public static string TraceStatementClosed {
-            get {
+        internal static string TraceStatementClosed
+        {
+            get
+            {
                 return ResourceManager.GetString("TraceStatementClosed", resourceCulture);
             }
         }
-        
+
         /// <summary>
-        ///    查找与 {0}: Statement executed: statement id = {1} 类似的本地化字符串。
+        ///   查找类似 {0}: Statement executed: statement id = {1} 的本地化字符串。
         /// </summary>
-        public static string TraceStatementExecuted {
-            get {
+        internal static string TraceStatementExecuted
+        {
+            get
+            {
                 return ResourceManager.GetString("TraceStatementExecuted", resourceCulture);
             }
         }
-        
+
         /// <summary>
-        ///    查找与 {0}: Statement prepared: sql=&apos;{1}&apos;, statement id={2} 类似的本地化字符串。
+        ///   查找类似 {0}: Statement prepared: sql=&apos;{1}&apos;, statement id={2} 的本地化字符串。
         /// </summary>
-        public static string TraceStatementPrepared {
-            get {
+        internal static string TraceStatementPrepared
+        {
+            get
+            {
                 return ResourceManager.GetString("TraceStatementPrepared", resourceCulture);
             }
         }
-        
+
         /// <summary>
-        ///    查找与 {0}: Usage Advisor Warning: Query is using a bad index 类似的本地化字符串。
+        ///   查找类似 {0}: Usage Advisor Warning: Query is using a bad index 的本地化字符串。
         /// </summary>
-        public static string TraceUAWarningBadIndex {
-            get {
+        internal static string TraceUAWarningBadIndex
+        {
+            get
+            {
                 return ResourceManager.GetString("TraceUAWarningBadIndex", resourceCulture);
             }
         }
-        
+
         /// <summary>
-        ///    查找与 {0}: Usage Advisor Warning: The field &apos;{2}&apos; was converted to the following types: {3} 类似的本地化字符串。
+        ///   查找类似 {0}: Usage Advisor Warning: The field &apos;{2}&apos; was converted to the following types: {3} 的本地化字符串。
         /// </summary>
-        public static string TraceUAWarningFieldConversion {
-            get {
+        internal static string TraceUAWarningFieldConversion
+        {
+            get
+            {
                 return ResourceManager.GetString("TraceUAWarningFieldConversion", resourceCulture);
             }
         }
-        
+
         /// <summary>
-        ///    查找与 {0}: Usage Advisor Warning: Query does not use an index 类似的本地化字符串。
+        ///   查找类似 {0}: Usage Advisor Warning: Query does not use an index 的本地化字符串。
         /// </summary>
-        public static string TraceUAWarningNoIndex {
-            get {
+        internal static string TraceUAWarningNoIndex
+        {
+            get
+            {
                 return ResourceManager.GetString("TraceUAWarningNoIndex", resourceCulture);
             }
         }
-        
+
         /// <summary>
-        ///    查找与 {0}: Usage Advisor Warning: The following columns were not accessed: {2} 类似的本地化字符串。
+        ///   查找类似 {0}: Usage Advisor Warning: The following columns were not accessed: {2} 的本地化字符串。
         /// </summary>
-        public static string TraceUAWarningSkippedColumns {
-            get {
+        internal static string TraceUAWarningSkippedColumns
+        {
+            get
+            {
                 return ResourceManager.GetString("TraceUAWarningSkippedColumns", resourceCulture);
             }
         }
-        
+
         /// <summary>
-        ///    查找与 {0}: Usage Advisor Warning: Skipped {2} rows. Consider a more focused query. 类似的本地化字符串。
+        ///   查找类似 {0}: Usage Advisor Warning: Skipped {2} rows. Consider a more focused query. 的本地化字符串。
         /// </summary>
-        public static string TraceUAWarningSkippedRows {
-            get {
+        internal static string TraceUAWarningSkippedRows
+        {
+            get
+            {
                 return ResourceManager.GetString("TraceUAWarningSkippedRows", resourceCulture);
             }
         }
-        
+
         /// <summary>
-        ///    查找与 {0}: MySql Warning: Level={1}, Code={2}, Message={3} 类似的本地化字符串。
+        ///   查找类似 {0}: MySql Warning: Level={1}, Code={2}, Message={3} 的本地化字符串。
         /// </summary>
-        public static string TraceWarning {
-            get {
+        internal static string TraceWarning
+        {
+            get
+            {
                 return ResourceManager.GetString("TraceWarning", resourceCulture);
             }
         }
-        
+
         /// <summary>
-        ///    查找与 Type &apos;{0}&apos; is not derived from BaseCommandInterceptor 类似的本地化字符串。
+        ///   查找类似 Type &apos;{0}&apos; is not derived from BaseCommandInterceptor 的本地化字符串。
         /// </summary>
-        public static string TypeIsNotCommandInterceptor {
-            get {
+        internal static string TypeIsNotCommandInterceptor
+        {
+            get
+            {
                 return ResourceManager.GetString("TypeIsNotCommandInterceptor", resourceCulture);
             }
         }
-        
+
         /// <summary>
-        ///    查找与 Type &apos;{0}&apos; is not derived from BaseExceptionInterceptor 类似的本地化字符串。
+        ///   查找类似 Type &apos;{0}&apos; is not derived from BaseExceptionInterceptor 的本地化字符串。
         /// </summary>
-        public static string TypeIsNotExceptionInterceptor {
-            get {
+        internal static string TypeIsNotExceptionInterceptor
+        {
+            get
+            {
                 return ResourceManager.GetString("TypeIsNotExceptionInterceptor", resourceCulture);
             }
         }
-        
+
         /// <summary>
-        ///    查找与 Unable to connect to any of the specified MySQL hosts. 类似的本地化字符串。
+        ///   查找类似 Unable to connect to any of the specified MySQL hosts. 的本地化字符串。
         /// </summary>
-        public static string UnableToConnectToHost {
-            get {
+        internal static string UnableToConnectToHost
+        {
+            get
+            {
                 return ResourceManager.GetString("UnableToConnectToHost", resourceCulture);
             }
         }
-        
+
         /// <summary>
-        ///    查找与 Unable to create plugin for authentication method &apos;{0}&apos;. Please see inner exception for details. 类似的本地化字符串。
+        ///   查找类似 Unable to create plugin for authentication method &apos;{0}&apos;. Please see inner exception for details. 的本地化字符串。
         /// </summary>
-        public static string UnableToCreateAuthPlugin {
-            get {
+        internal static string UnableToCreateAuthPlugin
+        {
+            get
+            {
                 return ResourceManager.GetString("UnableToCreateAuthPlugin", resourceCulture);
             }
         }
-        
+
         /// <summary>
-        ///    查找与 Unable to derive stored routine parameters.  The &apos;Parameters&apos; information schema table is not available and access to the stored procedure body has been disabled. 类似的本地化字符串。
+        ///   查找类似 Unable to derive stored routine parameters.  The &apos;Parameters&apos; information schema table is not available and access to the stored procedure body has been disabled. 的本地化字符串。
         /// </summary>
-        public static string UnableToDeriveParameters {
-            get {
+        internal static string UnableToDeriveParameters
+        {
+            get
+            {
                 return ResourceManager.GetString("UnableToDeriveParameters", resourceCulture);
             }
         }
-        
+
         /// <summary>
-        ///    查找与 Unable to enable query analysis.  Be sure the Pomelo.Data.EMTrace assembly is properly located and registered. 类似的本地化字符串。
+        ///   查找类似 Unable to enable query analysis.  Be sure the Pomelo.Data.EMTrace assembly is properly located and registered. 的本地化字符串。
         /// </summary>
-        public static string UnableToEnableQueryAnalysis {
-            get {
+        internal static string UnableToEnableQueryAnalysis
+        {
+            get
+            {
                 return ResourceManager.GetString("UnableToEnableQueryAnalysis", resourceCulture);
             }
         }
-        
+
         /// <summary>
-        ///    查找与 An error occured attempting to enumerate the user-defined functions.  Do you have SELECT privileges on the mysql.func table? 类似的本地化字符串。
+        ///   查找类似 An error occured attempting to enumerate the user-defined functions.  Do you have SELECT privileges on the mysql.func table? 的本地化字符串。
         /// </summary>
-        public static string UnableToEnumerateUDF {
-            get {
+        internal static string UnableToEnumerateUDF
+        {
+            get
+            {
                 return ResourceManager.GetString("UnableToEnumerateUDF", resourceCulture);
             }
         }
-        
+
         /// <summary>
-        ///    查找与 Unable to execute stored procedure &apos;{0}&apos;. 类似的本地化字符串。
+        ///   查找类似 Unable to execute stored procedure &apos;{0}&apos;. 的本地化字符串。
         /// </summary>
-        public static string UnableToExecuteSP {
-            get {
+        internal static string UnableToExecuteSP
+        {
+            get
+            {
                 return ResourceManager.GetString("UnableToExecuteSP", resourceCulture);
             }
         }
-        
+
         /// <summary>
-        ///    查找与 There was an error parsing the foreign key definition. 类似的本地化字符串。
+        ///   查找类似 There was an error parsing the foreign key definition. 的本地化字符串。
         /// </summary>
-        public static string UnableToParseFK {
-            get {
+        internal static string UnableToParseFK
+        {
+            get
+            {
                 return ResourceManager.GetString("UnableToParseFK", resourceCulture);
             }
         }
-        
+
         /// <summary>
-        ///    查找与 Unable to retrieve stored procedure metadata for routine &apos;{0}&apos;.  Either grant  SELECT privilege to mysql.proc for this user or use &quot;check parameters=false&quot; with  your connection string. 类似的本地化字符串。
+        ///   查找类似 Unable to retrieve stored procedure metadata for routine &apos;{0}&apos;.  Either grant  SELECT privilege to mysql.proc for this user or use &quot;check parameters=false&quot; with  your connection string. 的本地化字符串。
         /// </summary>
-        public static string UnableToRetrieveParameters {
-            get {
+        internal static string UnableToRetrieveParameters
+        {
+            get
+            {
                 return ResourceManager.GetString("UnableToRetrieveParameters", resourceCulture);
             }
         }
-        
+
         /// <summary>
-        ///    查找与 Unable to start a second async operation while one is running. 类似的本地化字符串。
+        ///   查找类似 Unable to start a second async operation while one is running. 的本地化字符串。
         /// </summary>
-        public static string UnableToStartSecondAsyncOp {
-            get {
+        internal static string UnableToStartSecondAsyncOp
+        {
+            get
+            {
                 return ResourceManager.GetString("UnableToStartSecondAsyncOp", resourceCulture);
             }
         }
-        
+
         /// <summary>
-        ///    查找与 Unix sockets are not supported on Windows 类似的本地化字符串。
+        ///   查找类似 Unix sockets are not supported on Windows 的本地化字符串。
         /// </summary>
-        public static string UnixSocketsNotSupported {
-            get {
+        internal static string UnixSocketsNotSupported
+        {
+            get
+            {
                 return ResourceManager.GetString("UnixSocketsNotSupported", resourceCulture);
             }
         }
-        
+
         /// <summary>
-        ///    查找与 Unknown authentication method &apos;{0}&apos; was requested. 类似的本地化字符串。
+        ///   查找类似 Unknown authentication method &apos;{0}&apos; was requested. 的本地化字符串。
         /// </summary>
-        public static string UnknownAuthenticationMethod {
-            get {
+        internal static string UnknownAuthenticationMethod
+        {
+            get
+            {
                 return ResourceManager.GetString("UnknownAuthenticationMethod", resourceCulture);
             }
         }
-        
+
         /// <summary>
-        ///    查找与 Unknown connection protocol 类似的本地化字符串。
+        ///   查找类似 Unknown connection protocol 的本地化字符串。
         /// </summary>
-        public static string UnknownConnectionProtocol {
-            get {
+        internal static string UnknownConnectionProtocol
+        {
+            get
+            {
                 return ResourceManager.GetString("UnknownConnectionProtocol", resourceCulture);
             }
         }
-        
+
         /// <summary>
-        ///    查找与 Value &apos;{0}&apos; is not of the correct type. 类似的本地化字符串。
+        ///   查找类似 Value &apos;{0}&apos; is not of the correct type. 的本地化字符串。
         /// </summary>
-        public static string ValueNotCorrectType {
-            get {
+        internal static string ValueNotCorrectType
+        {
+            get
+            {
                 return ResourceManager.GetString("ValueNotCorrectType", resourceCulture);
             }
         }
-        
+
         /// <summary>
-        ///    查找与 The requested column value could not be treated as or conveted to a Guid. 类似的本地化字符串。
+        ///   查找类似 The requested column value could not be treated as or conveted to a Guid. 的本地化字符串。
         /// </summary>
-        public static string ValueNotSupportedForGuid {
-            get {
+        internal static string ValueNotSupportedForGuid
+        {
+            get
+            {
                 return ResourceManager.GetString("ValueNotSupportedForGuid", resourceCulture);
             }
         }
-        
+
         /// <summary>
-        ///    查找与 Windows authentication connections are not supported on {0} 类似的本地化字符串。
+        ///   查找类似 Windows authentication connections are not supported on {0} 的本地化字符串。
         /// </summary>
-        public static string WinAuthNotSupportOnPlatform {
-            get {
+        internal static string WinAuthNotSupportOnPlatform
+        {
+            get
+            {
                 return ResourceManager.GetString("WinAuthNotSupportOnPlatform", resourceCulture);
             }
         }
-        
+
         /// <summary>
-        ///    查找与 Writing to the stream failed. 类似的本地化字符串。
+        ///   查找类似 Writing to the stream failed. 的本地化字符串。
         /// </summary>
-        public static string WriteToStreamFailed {
-            get {
+        internal static string WriteToStreamFailed
+        {
+            get
+            {
                 return ResourceManager.GetString("WriteToStreamFailed", resourceCulture);
             }
         }
-        
+
         /// <summary>
-        ///    查找与 Parameter &apos;{0}&apos; is not found but a parameter with the name &apos;{1}&apos; is found. Parameter names must include the leading parameter marker. 类似的本地化字符串。
+        ///   查找类似 Parameter &apos;{0}&apos; is not found but a parameter with the name &apos;{1}&apos; is found. Parameter names must include the leading parameter marker. 的本地化字符串。
         /// </summary>
-        public static string WrongParameterName {
-            get {
+        internal static string WrongParameterName
+        {
+            get
+            {
                 return ResourceManager.GetString("WrongParameterName", resourceCulture);
             }
         }

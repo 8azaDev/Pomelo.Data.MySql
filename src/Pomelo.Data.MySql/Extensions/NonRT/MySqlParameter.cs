@@ -3,7 +3,7 @@
 
 using System;
 using System.ComponentModel;
-#if !NETSTANDARD1_3
+#if !NETSTANDARD1_6
 using System.ComponentModel.Design.Serialization;
 #endif
 using System.Data;
@@ -14,11 +14,11 @@ using ParameterDirection = System.Data.ParameterDirection;
 
 namespace Pomelo.Data.MySql
 {
-#if !NETSTANDARD1_3
+#if !NETSTANDARD1_6
   [TypeConverter(typeof(MySqlParameterConverter))]
 #endif
 
-#if NET451
+#if NET46
   public sealed partial class MySqlParameter : DbParameter, IDbDataParameter
 #else
     public sealed partial class MySqlParameter : DbParameter
@@ -38,13 +38,13 @@ namespace Pomelo.Data.MySql
       Size = size;
       Direction = ParameterDirection.Input;
       SourceColumn = sourceColumn;
-#if NET451
+#if NET46
       SourceVersion = DataRowVersion.Current;
 #endif
         }
 
 
-#if NET451
+#if NET46
 
     /// <summary>
     /// Initializes a new instance of the <see cref="MySqlParameter"/> class with the parameter name, the type of the parameter, the size of the parameter, a <see cref="ParameterDirection"/>, the precision of the parameter, the scale of the parameter, the source column, a <see cref="DataRowVersion"/> to use, and the value of the parameter.
@@ -297,7 +297,7 @@ namespace Pomelo.Data.MySql
     }
   }
 
-#if !NETSTANDARD1_3
+#if !NETSTANDARD1_6
   internal class MySqlParameterConverter : TypeConverter
   {
 

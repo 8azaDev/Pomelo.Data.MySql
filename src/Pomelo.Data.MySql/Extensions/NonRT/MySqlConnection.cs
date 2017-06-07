@@ -4,7 +4,7 @@
 using System.ComponentModel;
 using System.Data;
 using System.Data.Common;
-#if NET451
+#if NET46
 using System.Security;
 using System.Security.Permissions;
 #endif
@@ -20,7 +20,7 @@ namespace Pomelo.Data.MySql
         /// Returns schema information for the data source of this <see cref="DbConnection"/>. 
         /// </summary>
         /// <returns>A <see cref="DataTable"/> that contains schema information. </returns>
-#if NET451
+#if NET46
     public override DataTable GetSchema()
     {
       return GetSchema(null);
@@ -71,7 +71,7 @@ namespace Pomelo.Data.MySql
       return CreateCommand();
     }
 
-#if NET451
+#if NET46
     /*partial void AssertPermissions()
     {
       // Security Asserts can only be done when the assemblies 

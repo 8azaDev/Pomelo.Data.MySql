@@ -20,7 +20,7 @@ namespace Pomelo.Data.Common
 
     public static bool IsWindows()
     {
-#if NETSTANDARD1_3
+#if NETSTANDARD1_6
       return true;
 #else
       OperatingSystem os = Environment.OSVersion;
@@ -39,7 +39,7 @@ namespace Pomelo.Data.Common
     {
       get
       {
-#if NETSTANDARD1_3
+#if NETSTANDARD1_6
                 return '\\';
 #else
           return Path.DirectorySeparatorChar;

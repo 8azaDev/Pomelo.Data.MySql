@@ -17,7 +17,7 @@ namespace Pomelo.Data.MySql
     {
         private int executionCount;
         private int statementId;
-#if NET451
+#if NET46
         BitArray nullMap;
 #else
         RtBitArray nullMap;
@@ -80,7 +80,7 @@ namespace Pomelo.Data.MySql
             int numNullBytes = 0;
             if (paramList != null && paramList.Length > 0)
             {
-#if NET451
+#if NET46
                 nullMap = new BitArray(paramList.Length);
 #else
                 nullMap= new RtBitArray(paramList.Length);

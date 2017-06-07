@@ -66,7 +66,7 @@ namespace Pomelo.Data.MySql
       // if we have no password, then we just return 2 zero bytes
       if (password.Length == 0) return new byte[1];
 
-#if NET451
+#if NET46
       SHA1 sha = new SHA1CryptoServiceProvider();
 #else
             SHA1 sha = SHA1.Create();

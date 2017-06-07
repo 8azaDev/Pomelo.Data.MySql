@@ -172,7 +172,7 @@ namespace Pomelo.Data.MySql
             try
             {
                 baseStream = StreamCreator.GetStream(Settings);
-#if NET451
+#if NET46
          if (Settings.IncludeSecurityAsserts)
             MySqlSecurityPermission.CreatePermissionSet(false).Assert();
 #endif
@@ -880,7 +880,7 @@ namespace Pomelo.Data.MySql
                 foreach (PropertyInfo property in attrs.GetType().GetProperties())
                 {
                     string name = property.Name;
-#if NETSTANDARD1_3
+#if NETSTANDARD1_6
                     object[] customAttrs = property.GetCustomAttributes(typeof(DisplayNameAttribute), false).ToArray();
 #else
           object[] customAttrs = property.GetCustomAttributes(typeof(DisplayNameAttribute), false).ToArray();

@@ -25,7 +25,7 @@ namespace Pomelo.Data.MySql
 
     static MySqlPoolManager()
     {
-#if !NETSTANDARD1_3
+#if !NETSTANDARD1_6
       AppDomain.CurrentDomain.ProcessExit += new EventHandler(EnsureClearingPools);
       AppDomain.CurrentDomain.DomainUnload += new EventHandler(EnsureClearingPools);
 #endif
@@ -48,7 +48,7 @@ namespace Pomelo.Data.MySql
       {
         key = settings.ConnectionString;
       }
-#if !NETSTANDARD1_3
+#if !NETSTANDARD1_6
       if (settings.IntegratedSecurity && !settings.ConnectionReset)
       {
         try

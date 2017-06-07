@@ -60,13 +60,13 @@ namespace Pomelo.Data.MySql.Authentication
     {
       // if we have no password, then we just return 1 zero byte
       if (password.Length == 0) return new byte[1];
-#if !NETSTANDARD1_3
+#if !NETSTANDARD1_6
       SHA1 sha = new SHA1CryptoServiceProvider();
 #else
       SHA1 sha = SHA1.Create();
 #endif
 
-#if !NETSTANDARD1_3
+#if !NETSTANDARD1_6
             byte[] firstHash = sha.ComputeHash(AliasText.Encoding.Default.GetBytes(password));
 
 #else

@@ -1,7 +1,7 @@
 // Copyright (c) Pomelo Foundation. All rights reserved.
 // Licensed under the MIT. See LICENSE in the project root for license information.
 
-#if NET451
+#if NET46
 
 using System.Data;
 using System.Data.Common;

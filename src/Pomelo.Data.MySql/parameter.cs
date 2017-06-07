@@ -113,7 +113,7 @@ namespace Pomelo.Data.MySql
         /// Gets or sets the MySqlDbType of the parameter.
         /// </summary>
         [Category("Data")]
-#if !NETSTANDARD1_3
+#if !NETSTANDARD1_6
         [System.Data.Common.DbProviderSpecificTypeProperty(true)]
 #endif
         public MySqlDbType MySqlDbType
@@ -289,7 +289,7 @@ namespace Pomelo.Data.MySql
                     case "Decimal": MySqlDbType = MySqlDbType.Decimal; break;
                     case "Object":
                     default:
-#if NETSTANDARD1_3
+#if NETSTANDARD1_6
             if (t.GetTypeInfo().BaseType == typeof(Enum))
 #else
                         if (t.BaseType == typeof(Enum))
@@ -306,7 +306,7 @@ namespace Pomelo.Data.MySql
 
         public MySqlParameter Clone()
         {
-#if NETSTANDARD1_3
+#if NETSTANDARD1_6
         MySqlParameter clone = new MySqlParameter(paramName, mySqlDbType);
 #else
             MySqlParameter clone = new MySqlParameter(paramName, mySqlDbType, Direction, SourceColumn, SourceVersion, paramValue);

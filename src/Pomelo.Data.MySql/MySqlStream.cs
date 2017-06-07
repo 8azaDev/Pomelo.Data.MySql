@@ -51,7 +51,7 @@ namespace Pomelo.Data.MySql
         {
             timedStream = new TimedStream(baseStream);
             Stream stream;
-#if NET451
+#if NET46
             if (compress)
                 stream = new CompressedStream(timedStream);
             else
@@ -65,7 +65,7 @@ namespace Pomelo.Data.MySql
 
         public void Close()
         {
-#if NETSTANDARD1_3
+#if NETSTANDARD1_6
             outStream.Dispose();
             inStream.Dispose();
 #else
@@ -190,7 +190,7 @@ namespace Pomelo.Data.MySql
                     // make roo for the next block
                     packet.Length += length;
 
-#if NETSTANDARD1_3
+#if NETSTANDARD1_6
                     byte[] tempBuffer = new byte[length];
                     ReadFully(inStream, tempBuffer, offset, length);
                     packet.Write(tempBuffer);

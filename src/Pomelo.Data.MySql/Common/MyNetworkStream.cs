@@ -204,7 +204,7 @@ namespace Pomelo.Data.Common
         {
             IPHostEntry ipHE = ParseIPAddress(hostname);
             if (ipHE != null) return ipHE.AddressList;
-#if NET451
+#if NET46
             return Dns.GetHostAddresses(hostname);
 #else
             return Dns.GetHostAddressesAsync(hostname).Result;
@@ -231,7 +231,7 @@ namespace Pomelo.Data.Common
             }
             catch (Exception ex)
             {
-#if !NETSTANDARD1_3
+#if !NETSTANDARD1_6
                 socket.Close();
 #else
                 socket.Dispose();

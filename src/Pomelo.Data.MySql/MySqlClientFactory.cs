@@ -23,7 +23,7 @@ namespace Pomelo.Data.MySql
     //private FieldInfo mySqlDbProviderServicesInstance;
 
 
-#if NET451
+#if NET46
         /// <summary>
         /// Returns a strongly typed <see cref="DbCommandBuilder"/> instance. 
         /// </summary>

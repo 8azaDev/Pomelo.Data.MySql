@@ -664,7 +664,7 @@ namespace Pomelo.Data.MySql
 
         private MySqlSchemaCollection GetDataSourceInformation()
         {
-#if NETSTANDARD1_3
+#if NETSTANDARD1_6
             throw new NotSupportedException();
 #else
       MySqlSchemaCollection dt = new MySqlSchemaCollection("DataSourceInformation");
@@ -812,7 +812,7 @@ namespace Pomelo.Data.MySql
         private static MySqlSchemaCollection GetReservedWords()
         {
             MySqlSchemaCollection dt = new MySqlSchemaCollection("ReservedWords");
-#if !NETSTANDARD1_3
+#if !NETSTANDARD1_6
       dt.AddColumn(DbMetaDataColumnNames.ReservedWord, typeof(string));
       Stream str = Assembly.GetExecutingAssembly().GetManifestResourceStream(
         "Pomelo.Data.MySql.Properties.ReservedWords.txt");
@@ -833,7 +833,7 @@ namespace Pomelo.Data.MySql
                 }
                 line = sr.ReadLine();
             }
-#if NETSTANDARD1_3
+#if NETSTANDARD1_6
             sr.Dispose();
             str.Dispose();
 #else

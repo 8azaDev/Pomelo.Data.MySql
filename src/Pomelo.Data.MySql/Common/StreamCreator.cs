@@ -51,13 +51,13 @@ namespace Pomelo.Data.Common
         case MySqlConnectionProtocol.UnixSocket: throw new NotImplementedException();
         case MySqlConnectionProtocol.SharedMemory: throw new NotImplementedException();
 #else
-#if !NETSTANDARD1_3
+#if !NETSTANDARD1_6
         case MySqlConnectionProtocol.UnixSocket: return GetUnixSocketStream(settings);        
         case MySqlConnectionProtocol.SharedMemory: return GetSharedMemoryStream(settings);
 #endif
 
 #endif
-#if !NETSTANDARD1_3
+#if !NETSTANDARD1_6
                 case MySqlConnectionProtocol.NamedPipe: return GetNamedPipeStream(settings);
 #endif
             }
@@ -70,7 +70,7 @@ namespace Pomelo.Data.Common
             return s;
         }
 
-#if !NETSTANDARD1_3
+#if !NETSTANDARD1_6
     private static Stream GetUnixSocketStream(MySqlConnectionStringBuilder settings)
     {
       if (Platform.IsWindows())

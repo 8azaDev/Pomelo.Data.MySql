@@ -133,7 +133,7 @@ namespace Pomelo.Data.MySql
         throw new MySqlException("Only MySqlParameter objects may be stored");
       InternalAdd(parameter, index);
     }
-#if NET451
+#if NET46
     /// <summary>
     /// Gets a value that indicates whether the <see cref="MySqlParameterCollection"/>
     /// has a fixed size. 

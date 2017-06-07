@@ -39,7 +39,7 @@ namespace Pomelo.Data.MySql
         {
             return GetMySqlGeometry(GetOrdinal(column));
         }
-#if NET451
+#if NET46
     /// <summary>
     /// Returns a DataTable that describes the column metadata of the MySqlDataReader.
     /// </summary>

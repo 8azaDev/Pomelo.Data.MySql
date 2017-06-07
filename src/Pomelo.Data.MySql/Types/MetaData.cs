@@ -11,7 +11,7 @@ namespace Pomelo.Data.Types
   {
     public static bool IsNumericType(string typename)
     {
-#if NETSTANDARD1_3
+#if NETSTANDARD1_6
             string lowerType = typename.ToLower();
 #else
              string lowerType = typename.ToLower(CultureInfo.InvariantCulture);
@@ -39,7 +39,7 @@ namespace Pomelo.Data.Types
 
     public static bool IsTextType(string typename)
     {
-#if NETSTANDARD1_3
+#if NETSTANDARD1_6
             string lowerType = typename.ToLower();
 #else
              string lowerType = typename.ToLower(CultureInfo.InvariantCulture);
@@ -63,7 +63,7 @@ namespace Pomelo.Data.Types
 
     public static bool SupportScale(string typename)
     {
-#if NETSTANDARD1_3
+#if NETSTANDARD1_6
             string lowerType = typename.ToLower();
 #else
              string lowerType = typename.ToLower(CultureInfo.InvariantCulture);

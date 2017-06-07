@@ -80,7 +80,7 @@ namespace Pomelo.Data.MySql
             get
             {
 
-#if NETSTANDARD1_3
+#if NETSTANDARD1_6
                 byte[] result = new byte[buffer.Length];
                 long currentPos = buffer.Position;
                 buffer.Seek(0, SeekOrigin.Begin);

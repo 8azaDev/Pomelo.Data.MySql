@@ -84,7 +84,7 @@ namespace Pomelo.Data.MySql
     }
         #endregion
 
-#if NET451
+#if NET46
         #region ExecuteDataSet
 
     /// <summary>
